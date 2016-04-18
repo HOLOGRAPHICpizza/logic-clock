@@ -1,0 +1,665 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
+                                                                                               Sat Mar  5 21:21:38 2016
+
+Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
+     1                           	processor	16F873A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     5                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     8                           	psect	maintext,global,class=CODE,split=1,delta=2
+     9                           	psect	text1,local,class=CODE,merge=1,delta=2
+    10                           	psect	text2,local,class=CODE,merge=1,delta=2
+    11                           	psect	intentry,global,class=CODE,delta=2
+    12                           	dabs	1,0x7C,2
+    13  0000                     	;# 
+    14  0001                     	;# 
+    15  0002                     	;# 
+    16  0003                     	;# 
+    17  0004                     	;# 
+    18  0005                     	;# 
+    19  0006                     	;# 
+    20  0007                     	;# 
+    21  000A                     	;# 
+    22  000B                     	;# 
+    23  000C                     	;# 
+    24  000D                     	;# 
+    25  000E                     	;# 
+    26  000E                     	;# 
+    27  000F                     	;# 
+    28  0010                     	;# 
+    29  0011                     	;# 
+    30  0012                     	;# 
+    31  0013                     	;# 
+    32  0014                     	;# 
+    33  0015                     	;# 
+    34  0015                     	;# 
+    35  0016                     	;# 
+    36  0017                     	;# 
+    37  0018                     	;# 
+    38  0019                     	;# 
+    39  001A                     	;# 
+    40  001B                     	;# 
+    41  001B                     	;# 
+    42  001C                     	;# 
+    43  001D                     	;# 
+    44  001E                     	;# 
+    45  001F                     	;# 
+    46  0081                     	;# 
+    47  0085                     	;# 
+    48  0086                     	;# 
+    49  0087                     	;# 
+    50  008C                     	;# 
+    51  008D                     	;# 
+    52  008E                     	;# 
+    53  0091                     	;# 
+    54  0092                     	;# 
+    55  0093                     	;# 
+    56  0094                     	;# 
+    57  0098                     	;# 
+    58  0099                     	;# 
+    59  009C                     	;# 
+    60  009D                     	;# 
+    61  009E                     	;# 
+    62  009F                     	;# 
+    63  010C                     	;# 
+    64  010D                     	;# 
+    65  010E                     	;# 
+    66  010F                     	;# 
+    67  018C                     	;# 
+    68  018D                     	;# 
+    69  000B                     _INTCONbits	set	11
+    70  000C                     _PIR1bits	set	12
+    71  0005                     _PORTA	set	5
+    72  0005                     _PORTAbits	set	5
+    73  0006                     _PORTB	set	6
+    74  0007                     _PORTC	set	7
+    75  0018                     _RCSTAbits	set	24
+    76  0014                     _SSPCONbits	set	20
+    77  0003                     _STATUSbits	set	3
+    78  009F                     _ADCON1	set	159
+    79  009C                     _CMCONbits	set	156
+    80  0081                     _OPTION_REGbits	set	129
+    81  008C                     _PIE1bits	set	140
+    82  0099                     _SPBRG	set	153
+    83  0094                     _SSPSTATbits	set	148
+    84  0085                     _TRISA	set	133
+    85  0086                     _TRISB	set	134
+    86  0087                     _TRISC	set	135
+    87  0087                     _TRISCbits	set	135
+    88  0098                     _TXSTAbits	set	152
+    89                           
+    90                           ; #config settings
+    91  0000                     
+    92                           	psect	cinit
+    93  0013                     start_initialization:	
+    94  0013                     __initialization:	
+    95                           
+    96                           ; Clear objects allocated to BANK0
+    97  0013  01A8               	clrf	__pbssBANK0& (0+127)
+    98  0014  01A9               	clrf	(__pbssBANK0+1)& (0+127)
+    99  0015  01AA               	clrf	(__pbssBANK0+2)& (0+127)
+   100  0016  01AB               	clrf	(__pbssBANK0+3)& (0+127)
+   101  0017                     end_of_initialization:	
+   102                           ;End of C runtime variable initialization code
+   103                           
+   104  0017                     __end_of__initialization:	
+   105  0017  0183               	clrf	3
+   106  0018  118A  281A         	ljmp	_main	;jump to C main() function
+   107                           
+   108                           	psect	bssBANK0
+   109  0028                     __pbssBANK0:	
+   110  0028                     _heartbeat:	
+   111  0028                     	ds	2
+   112  002A                     _scratch:	
+   113  002A                     	ds	2
+   114                           
+   115                           	psect	cstackCOMMON
+   116  0000                     __pcstackCOMMON:	
+   117  0000                     ??_countDelay:	
+   118  0000                     ??_main:	
+   119                           ; 1 bytes @ 0x0
+   120                           
+   121                           
+   122                           	psect	cstackBANK0
+   123  0020                     __pcstackBANK0:	
+   124                           ; 1 bytes @ 0x0
+   125                           
+   126  0020                     ?_isr:	
+   127  0020                     ??_isr:	
+   128                           ; 1 bytes @ 0x0
+   129                           
+   130  0020                     ?_main:	
+   131                           ; 1 bytes @ 0x0
+   132                           
+   133                           
+   134                           ; 1 bytes @ 0x0
+   135  0020                     	ds	4
+   136  0024                     ?_countDelay:	
+   137  0024                     countDelay@n:	
+   138                           ; 1 bytes @ 0x4
+   139                           
+   140                           
+   141                           ; 2 bytes @ 0x4
+   142  0024                     	ds	2
+   143  0026                     countDelay@x:	
+   144                           
+   145                           ; 2 bytes @ 0x6
+   146  0026                     	ds	2
+   147                           
+   148                           	psect	maintext
+   149  001A                     __pmaintext:	
+   150 ;;
+   151 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   152 ;;
+   153 ;; *************** function _main *****************
+   154 ;; Defined at:
+   155 ;;		line 27 in file "main.c"
+   156 ;; Parameters:    Size  Location     Type
+   157 ;;		None
+   158 ;; Auto vars:     Size  Location     Type
+   159 ;;		None
+   160 ;; Return value:  Size  Location     Type
+   161 ;;                  1    wreg      void 
+   162 ;; Registers used:
+   163 ;;		wreg, status,2, status,0, pclath, cstack
+   164 ;; Tracked objects:
+   165 ;;		On entry : B00/0
+   166 ;;		On exit  : 0/0
+   167 ;;		Unchanged: 0/0
+   168 ;; Data sizes:     COMMON   BANK0   BANK1
+   169 ;;      Params:         0       0       0
+   170 ;;      Locals:         0       0       0
+   171 ;;      Temps:          0       0       0
+   172 ;;      Totals:         0       0       0
+   173 ;;Total ram usage:        0 bytes
+   174 ;; Hardware stack levels required when called:    2
+   175 ;; This function calls:
+   176 ;;		_countDelay
+   177 ;; This function is called by:
+   178 ;;		Startup code after reset
+   179 ;; This function uses a non-reentrant model
+   180 ;;
+   181                           
+   182                           
+   183                           ;psect for function _main
+   184  001A                     _main:	
+   185                           
+   186                           ;main.c: 29: INTCONbits.GIE = 0;
+   187                           
+   188                           ;incstack = 0
+   189                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   190  001A  138B               	bcf	11,7	;volatile
+   191                           
+   192                           ;main.c: 32: PORTA = 0;
+   193  001B  1283               	bcf	3,5	;RP0=0, select bank0
+   194  001C  1303               	bcf	3,6	;RP1=0, select bank0
+   195  001D  0185               	clrf	5	;volatile
+   196                           
+   197                           ;main.c: 33: PORTB = 0;
+   198  001E  0186               	clrf	6	;volatile
+   199                           
+   200                           ;main.c: 34: PORTC = 0;
+   201  001F  0187               	clrf	7	;volatile
+   202                           
+   203                           ;main.c: 37: STATUSbits.RP1 = 0; STATUSbits.RP0 = 1;;
+   204  0020  1303               	bcf	3,6	;volatile
+   205  0021  1683               	bsf	3,5	;volatile
+   206                           
+   207                           ;main.c: 40: ADCON1 = 0x06;
+   208  0022  3006               	movlw	6
+   209  0023  1683               	bsf	3,5	;RP0=1, select bank1
+   210  0024  1303               	bcf	3,6	;RP1=0, select bank1
+   211  0025  009F               	movwf	31	;volatile
+   212                           
+   213                           ;main.c: 43: CMCONbits.CM0 = 1;
+   214  0026  141C               	bsf	28,0	;volatile
+   215                           
+   216                           ;main.c: 44: CMCONbits.CM1 = 1;
+   217  0027  149C               	bsf	28,1	;volatile
+   218                           
+   219                           ;main.c: 45: CMCONbits.CM2 = 1;
+   220  0028  151C               	bsf	28,2	;volatile
+   221                           
+   222                           ;main.c: 48: OPTION_REGbits.T0CS = 0;
+   223  0029  1281               	bcf	1,5	;volatile
+   224                           
+   225                           ;main.c: 51: TRISA = 0;
+   226  002A  0185               	clrf	5	;volatile
+   227                           
+   228                           ;main.c: 52: TRISB = 0;
+   229  002B  0186               	clrf	6	;volatile
+   230                           
+   231                           ;main.c: 53: TRISC = 0;
+   232  002C  0187               	clrf	7	;volatile
+   233                           
+   234                           ;main.c: 59: TRISCbits.TRISC7 = 1;
+   235  002D  1787               	bsf	7,7	;volatile
+   236                           
+   237                           ;main.c: 62: TXSTAbits.TXEN = 0;
+   238  002E  1298               	bcf	24,5	;volatile
+   239                           
+   240                           ;main.c: 63: TXSTAbits.SYNC = 0;
+   241  002F  1218               	bcf	24,4	;volatile
+   242                           
+   243                           ;main.c: 64: TXSTAbits.BRGH = 1;
+   244  0030  1518               	bsf	24,2	;volatile
+   245                           
+   246                           ;main.c: 65: SPBRG = 25;
+   247  0031  3019               	movlw	25
+   248  0032  0099               	movwf	25	;volatile
+   249                           
+   250                           ;main.c: 68: SSPSTATbits.CKE = 1;
+   251  0033  1714               	bsf	20,6	;volatile
+   252                           
+   253                           ;main.c: 71: PIE1bits.RCIE = 1;
+   254  0034  168C               	bsf	12,5	;volatile
+   255                           
+   256                           ;main.c: 74: STATUSbits.RP1 = 0; STATUSbits.RP0 = 0;;
+   257  0035  1283               	bcf	3,5	;RP0=0, select bank0
+   258  0036  1303               	bcf	3,6	;RP1=0, select bank0
+   259  0037  1303               	bcf	3,6	;volatile
+   260  0038  1283               	bcf	3,5	;volatile
+   261                           
+   262                           ;main.c: 77: PORTA = 0;
+   263  0039  0185               	clrf	5	;volatile
+   264                           
+   265                           ;main.c: 78: PORTB = 0;
+   266  003A  0186               	clrf	6	;volatile
+   267                           
+   268                           ;main.c: 79: PORTC = 0;
+   269  003B  0187               	clrf	7	;volatile
+   270                           
+   271                           ;main.c: 82: RCSTAbits.RX9 = 0;
+   272  003C  1318               	bcf	24,6	;volatile
+   273                           
+   274                           ;main.c: 83: RCSTAbits.ADDEN = 0;
+   275  003D  1198               	bcf	24,3	;volatile
+   276                           
+   277                           ;main.c: 84: RCSTAbits.SPEN = 1;
+   278  003E  1798               	bsf	24,7	;volatile
+   279                           
+   280                           ;main.c: 85: RCSTAbits.CREN = 1;
+   281  003F  1618               	bsf	24,4	;volatile
+   282                           
+   283                           ;main.c: 88: SSPCONbits.CKP = 0;
+   284  0040  1214               	bcf	20,4	;volatile
+   285                           
+   286                           ;main.c: 89: SSPCONbits.SSPM = 0b0010;
+   287  0041  0814               	movf	20,w	;volatile
+   288  0042  39F0               	andlw	-16
+   289  0043  3802               	iorlw	2
+   290  0044  0094               	movwf	20	;volatile
+   291                           
+   292                           ;main.c: 90: SSPCONbits.SSPEN = 1;
+   293  0045  1694               	bsf	20,5	;volatile
+   294                           
+   295                           ;main.c: 93: INTCONbits.PEIE = 1;
+   296  0046  170B               	bsf	11,6	;volatile
+   297                           
+   298                           ;main.c: 94: PIR1bits.RCIF = 0;
+   299  0047  128C               	bcf	12,5	;volatile
+   300                           
+   301                           ;main.c: 97: INTCONbits.INTE = 1;
+   302  0048  160B               	bsf	11,4	;volatile
+   303                           
+   304                           ;main.c: 98: INTCONbits.INTF = 0;
+   305  0049  108B               	bcf	11,1	;volatile
+   306                           
+   307                           ;main.c: 99: INTCONbits.TMR0IE = 0;
+   308  004A  128B               	bcf	11,5	;volatile
+   309                           
+   310                           ;main.c: 100: INTCONbits.RBIE = 0;
+   311  004B  118B               	bcf	11,3	;volatile
+   312                           
+   313                           ;main.c: 103: INTCONbits.GIE = 1;
+   314  004C  178B               	bsf	11,7	;volatile
+   315  004D                     l700:	
+   316                           ;main.c: 106: while(1) {
+   317                           
+   318                           
+   319                           ;main.c: 120: heartbeat++;
+   320  004D  3001               	movlw	1
+   321  004E  1283               	bcf	3,5	;RP0=0, select bank0
+   322  004F  1303               	bcf	3,6	;RP1=0, select bank0
+   323  0050  07A8               	addwf	_heartbeat,f
+   324  0051  1803               	skipnc
+   325  0052  0AA9               	incf	_heartbeat+1,f
+   326  0053  3000               	movlw	0
+   327  0054  07A9               	addwf	_heartbeat+1,f
+   328                           
+   329                           ;main.c: 121: if(heartbeat == 200) {
+   330  0055  30C8               	movlw	200
+   331  0056  0628               	xorwf	_heartbeat,w
+   332  0057  0429               	iorwf	_heartbeat+1,w
+   333  0058  1D03               	btfss	3,2
+   334  0059  2868               	goto	l708
+   335                           
+   336                           ;main.c: 122: PORTAbits.RA0 = ~PORTAbits.RA0;
+   337  005A  1003               	clrc
+   338  005B  1C05               	btfss	5,0	;volatile
+   339  005C  1403               	setc
+   340  005D  1C03               	btfss	3,0
+   341  005E  2863               	goto	u70
+   342  005F  1283               	bcf	3,5	;RP0=0, select bank0
+   343  0060  1303               	bcf	3,6	;RP1=0, select bank0
+   344  0061  1405               	bsf	5,0	;volatile
+   345  0062  2866               	goto	l706
+   346  0063                     u70:	
+   347  0063  1283               	bcf	3,5	;RP0=0, select bank0
+   348  0064  1303               	bcf	3,6	;RP1=0, select bank0
+   349  0065  1005               	bcf	5,0	;volatile
+   350  0066                     l706:	
+   351                           
+   352                           ;main.c: 123: heartbeat = 0;
+   353  0066  01A8               	clrf	_heartbeat
+   354  0067  01A9               	clrf	_heartbeat+1
+   355  0068                     l708:	
+   356                           
+   357                           ;main.c: 124: }
+   358                           ;main.c: 126: countDelay(128);
+   359  0068  3080               	movlw	128
+   360  0069  00A4               	movwf	countDelay@n
+   361  006A  3000               	movlw	0
+   362  006B  00A5               	movwf	countDelay@n+1
+   363  006C  118A  2070  118A   	fcall	_countDelay
+   364  006F  284D               	goto	l700
+   365  0070                     __end_of_main:	
+   366                           
+   367                           	psect	text1
+   368  0070                     __ptext1:	
+   369 ;; *************** function _countDelay *****************
+   370 ;; Defined at:
+   371 ;;		line 130 in file "main.c"
+   372 ;; Parameters:    Size  Location     Type
+   373 ;;  n               2    4[BANK0 ] int 
+   374 ;; Auto vars:     Size  Location     Type
+   375 ;;  x               2    6[BANK0 ] int 
+   376 ;; Return value:  Size  Location     Type
+   377 ;;                  1    wreg      void 
+   378 ;; Registers used:
+   379 ;;		wreg, status,2, status,0
+   380 ;; Tracked objects:
+   381 ;;		On entry : 0/0
+   382 ;;		On exit  : 0/0
+   383 ;;		Unchanged: 0/0
+   384 ;; Data sizes:     COMMON   BANK0   BANK1
+   385 ;;      Params:         0       2       0
+   386 ;;      Locals:         0       2       0
+   387 ;;      Temps:          0       0       0
+   388 ;;      Totals:         0       4       0
+   389 ;;Total ram usage:        4 bytes
+   390 ;; Hardware stack levels used:    1
+   391 ;; Hardware stack levels required when called:    1
+   392 ;; This function calls:
+   393 ;;		Nothing
+   394 ;; This function is called by:
+   395 ;;		_main
+   396 ;; This function uses a non-reentrant model
+   397 ;;
+   398                           
+   399                           
+   400                           ;psect for function _countDelay
+   401  0070                     _countDelay:	
+   402                           
+   403                           ;main.c: 131: int x = 0;
+   404                           
+   405                           ;incstack = 0
+   406                           ; Regs used in _countDelay: [wreg+status,2+status,0]
+   407  0070  1283               	bcf	3,5	;RP0=0, select bank0
+   408  0071  1303               	bcf	3,6	;RP1=0, select bank0
+   409  0072  01A6               	clrf	countDelay@x
+   410  0073  01A7               	clrf	countDelay@x+1
+   411  0074                     l622:	
+   412                           ;main.c: 132: while(n--) {
+   413                           
+   414  0074  30FF               	movlw	255
+   415  0075  07A4               	addwf	countDelay@n,f
+   416  0076  1803               	skipnc
+   417  0077  0AA5               	incf	countDelay@n+1,f
+   418  0078  30FF               	movlw	255
+   419  0079  07A5               	addwf	countDelay@n+1,f
+   420  007A  0A24               	incf	countDelay@n,w
+   421  007B  1903               	btfsc	3,2
+   422  007C  0A25               	incf	countDelay@n+1,w
+   423  007D  1903               	btfsc	3,2
+   424  007E  0008               	return
+   425                           
+   426                           ;main.c: 133: x++;
+   427  007F  3001               	movlw	1
+   428  0080  07A6               	addwf	countDelay@x,f
+   429  0081  1803               	skipnc
+   430  0082  0AA7               	incf	countDelay@x+1,f
+   431  0083  3000               	movlw	0
+   432  0084  07A7               	addwf	countDelay@x+1,f
+   433  0085  2874               	goto	l622
+   434  0086                     __end_of_countDelay:	
+   435                           
+   436                           	psect	text2
+   437  0086                     __ptext2:	
+   438 ;; *************** function _isr *****************
+   439 ;; Defined at:
+   440 ;;		line 23 in file "main.c"
+   441 ;; Parameters:    Size  Location     Type
+   442 ;;		None
+   443 ;; Auto vars:     Size  Location     Type
+   444 ;;		None
+   445 ;; Return value:  Size  Location     Type
+   446 ;;                  1    wreg      void 
+   447 ;; Registers used:
+   448 ;;		wreg
+   449 ;; Tracked objects:
+   450 ;;		On entry : 0/0
+   451 ;;		On exit  : 0/0
+   452 ;;		Unchanged: 0/0
+   453 ;; Data sizes:     COMMON   BANK0   BANK1
+   454 ;;      Params:         0       0       0
+   455 ;;      Locals:         0       0       0
+   456 ;;      Temps:          0       4       0
+   457 ;;      Totals:         0       4       0
+   458 ;;Total ram usage:        4 bytes
+   459 ;; Hardware stack levels used:    1
+   460 ;; This function calls:
+   461 ;;		Nothing
+   462 ;; This function is called by:
+   463 ;;		Interrupt level 1
+   464 ;; This function uses a non-reentrant model
+   465 ;;
+   466                           
+   467                           
+   468                           ;psect for function _isr
+   469  0086                     _isr:	
+   470                           
+   471                           ;main.c: 24: scratch++;
+   472  0086  3001               	movlw	1
+   473  0087  07AA               	addwf	_scratch,f
+   474  0088  1803               	skipnc
+   475  0089  0AAB               	incf	_scratch+1,f
+   476  008A  3000               	movlw	0
+   477  008B  07AB               	addwf	_scratch+1,f
+   478  008C  0823               	movf	??_isr+3,w
+   479  008D  00FD               	movwf	125
+   480  008E  0822               	movf	??_isr+2,w
+   481  008F  008A               	movwf	10
+   482  0090  0821               	movf	??_isr+1,w
+   483  0091  0084               	movwf	4
+   484  0092  0E20               	swapf	??_isr^0,w
+   485  0093  0083               	movwf	3
+   486  0094  0EFC               	swapf	124,f
+   487  0095  0E7C               	swapf	124,w
+   488  0096  0009               	retfie
+   489  0097                     __end_of_isr:	
+   490  007C                     btemp	set	124	;btemp
+   491  007C                     wtemp	set	124
+   492  007C                     wtemp0	set	124
+   493  007E                     wtemp1	set	126
+   494  0080                     wtemp2	set	128
+   495  0082                     wtemp3	set	130
+   496  0084                     wtemp4	set	132
+   497  0086                     wtemp5	set	134
+   498  007D                     wtemp6	set	125
+   499  007C                     ttemp	set	124
+   500  007C                     ttemp0	set	124
+   501  007F                     ttemp1	set	127
+   502  0082                     ttemp2	set	130
+   503  0085                     ttemp3	set	133
+   504  007D                     ttemp4	set	125
+   505  007C                     ltemp	set	124
+   506  007C                     ltemp0	set	124
+   507  0080                     ltemp1	set	128
+   508  0084                     ltemp2	set	132
+   509  007E                     ltemp3	set	126
+   510                           
+   511                           	psect	intentry
+   512  0004                     __pintentry:	
+   513                           ;incstack = 0
+   514                           ; Regs used in _isr: [wreg]
+   515                           
+   516  0004                     interrupt_function:	
+   517  007C                     saved_w	set	btemp
+   518  0004  00FC               	movwf	btemp
+   519  0005  0E03               	swapf	3,w
+   520  0006  1283               	bcf	3,5	;RP0=0, select bank0
+   521  0007  1303               	bcf	3,6	;RP1=0, select bank0
+   522  0008  00A0               	movwf	??_isr
+   523  0009  0804               	movf	4,w
+   524  000A  00A1               	movwf	??_isr+1
+   525  000B  080A               	movf	10,w
+   526  000C  00A2               	movwf	??_isr+2
+   527  000D  087D               	movf	btemp+1,w
+   528  000E  00A3               	movwf	??_isr+3
+   529  000F  118A  2886         	ljmp	_isr
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         4
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON            0      0       0
+    BANK0            92      8      12
+    BANK1            84      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMMON
+
+    None.
+
+Critical Paths under _isr in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    _main->_countDelay
+
+Critical Paths under _isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _isr in BANK1
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0      88
+                         _countDelay
+ ---------------------------------------------------------------------------------
+ (1) _countDelay                                           4     2      2      88
+                                              4 BANK0      4     2      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (2) _isr                                                  4     4      0       0
+                                              0 BANK0      4     4      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _countDelay
+
+ _isr (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            0      0       0       0        0.0%
+EEDATA              80      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+COMMON               0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            5C      0       0       3        0.0%
+BANK0               5C      8       C       4       13.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BITBANK1            54      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BANK1               54      0       0       6        0.0%
+ABS                  0      0       C       7        0.0%
+DATA                 0      0       C       8        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.36 build -262312587 
+Symbol Table                                                                                   Sat Mar  5 21:21:38 2016
+
+            __CFG_CP$OFF 0000              _SSPSTATbits 0094                       u70 0063  
+                    l700 004D                      l622 0074                      l706 0066  
+                    l708 0068             __CFG_CPD$OFF 0000                      _isr 0086  
+                    fsr0 0004             __CFG_FOSC$XT 0000             __CFG_LVP$OFF 0000  
+                   ?_isr 0020             __CFG_WRT$OFF 0000                     _main 001A  
+                   btemp 007C            __CFG_BOREN$ON 0000                     ltemp 007C  
+                   start 0011                     ttemp 007C                     wtemp 007C  
+                  ??_isr 0020                    ?_main 0020            __CFG_WDTE$OFF 0000  
+                  _SPBRG 0099                    _PORTA 0005                    _PORTB 0006  
+                  _PORTC 0007                    _TRISA 0085                    _TRISB 0086  
+                  _TRISC 0087              countDelay@n 0024              countDelay@x 0026  
+                  pclath 000A                    ltemp0 007C                    ltemp1 0080  
+                  ltemp2 0084                    ltemp3 007E                    ttemp0 007C  
+                  ttemp1 007F                    ttemp2 0082                    ttemp3 0085  
+                  ttemp4 007D                    status 0003                    wtemp0 007C  
+                  wtemp1 007E                    wtemp2 0080                    wtemp3 0082  
+                  wtemp4 0084                    wtemp5 0086                    wtemp6 007D  
+        __initialization 0013             __end_of_main 0070                   ??_main 0000  
+                 _ADCON1 009F           __CFG_PWRTE$OFF 0000                   saved_w 007C  
+__end_of__initialization 0017           __pcstackCOMMON 0000           _OPTION_REGbits 0081  
+             __pbssBANK0 0028               __pmaintext 001A               __pintentry 0004  
+             _countDelay 0070                _CMCONbits 009C                  __ptext1 0070  
+                __ptext2 0086             __size_of_isr 0011                  _scratch 002A  
+   end_of_initialization 0017                _RCSTAbits 0018                _PORTAbits 0005  
+              _TRISCbits 0087              ?_countDelay 0024                _TXSTAbits 0098  
+    start_initialization 0013              __end_of_isr 0097      __size_of_countDelay 0016  
+              ___latbits 0001            __pcstackBANK0 0020                _heartbeat 0028  
+      interrupt_function 0004                 _PIE1bits 008C                 _PIR1bits 000C  
+           ??_countDelay 0000       __end_of_countDelay 0086            __size_of_main 0056  
+             _INTCONbits 000B                 intlevel1 0000               _STATUSbits 0003  
+             _SSPCONbits 0014  
