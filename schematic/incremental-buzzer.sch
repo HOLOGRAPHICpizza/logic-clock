@@ -37,8 +37,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "INCREMENTAL VOLUME ALARM WITH SNOOZE"
-Date "2 mar 2016"
-Rev "5"
+Date "18 apr 2016"
+Rev "6"
 Comp "Michael Craft"
 Comment1 ""
 Comment2 ""
@@ -682,7 +682,7 @@ L USR R18
 U 1 1 56CCC9AF
 P 1850 5450
 F 0 "R18" V 1930 5450 40  0000 C CNN
-F 1 "100K" V 1750 5450 40  0000 C CNN
+F 1 "10K" V 1750 5450 40  0000 C CNN
 F 2 "~" V 1780 5450 30  0000 C CNN
 F 3 "~" H 1850 5450 30  0000 C CNN
 	1    1850 5450
