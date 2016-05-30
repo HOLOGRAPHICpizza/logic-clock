@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = Mon 30 May 2016 12:57:44 AM EDT
+Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = Mon 30 May 2016 01:39:02 AM EDT
 
 BeginCmp
 TimeStamp = /574BB7F4/56F2F8F8;
@@ -253,15 +253,36 @@ IdModule  = ;
 EndCmp
 
 BeginCmp
-TimeStamp = /574BB7F4/574BA340;
+TimeStamp = /574BEF09;
 Reference = P2;
+ValeurCmp = 2-PIN_LOGIC-OUT;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /574BF06C;
+Reference = P3;
+ValeurCmp = 2-PIN_LOGIC-OUT;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /574BE49F;
+Reference = P4;
+ValeurCmp = 4-PIN_LOGIC-OUT;
+IdModule  = ;
+EndCmp
+
+BeginCmp
+TimeStamp = /574BB7F4/574BA340;
+Reference = P5;
 ValeurCmp = 4-PIN_HEADER;
 IdModule  = PIN_ARRAY_4x1;
 EndCmp
 
 BeginCmp
 TimeStamp = /574BB7F4/574BC3AE;
-Reference = P3;
+Reference = P6;
 ValeurCmp = 2-PIN_HEADER;
 IdModule  = PIN_ARRAY_2X1;
 EndCmp
