@@ -8,7 +8,7 @@ __Hintentry 11 0 CODE 0
 __Lintentry 4 0 CODE 0
 __CFG_BOREN$ON 0 0 ABS 0
 __pintentry 4 0 CODE 0
-_isr 88 0 CODE 0
+_isr 8A 0 CODE 0
 __size_ofi1_countDelay 0 0 ABS 0
 _main 1C 0 CODE 0
 ___sp 0 0 STACK 2
@@ -82,12 +82,12 @@ stacklo 0 0 ABS 0
 saved_w 7E 0 ABS 0
 __Hinit 11 0 CODE 0
 __Linit 11 0 CODE 0
-__end_of_main 88 0 CODE 0
+__end_of_main 8A 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 19 0 CODE 0
 _heartbeat 30 0 BANK0 1
-__end_ofi1_countDelay F6 0 CODE 0
+__end_ofi1_countDelay F8 0 CODE 0
 __CFG_FOSC$XT 0 0 ABS 0
 _RCSTAbits 18 0 ABS 0
 _TRISCbits 87 0 ABS 0
@@ -109,9 +109,9 @@ __Lbank3 0 0 BANK3 1
 ___latbits 1 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-__ptext1 CA 0 CODE 0
-__ptext2 88 0 CODE 0
-__ptext3 E0 0 CODE 0
+__ptext1 CC 0 CODE 0
+__ptext2 8A 0 CODE 0
+__ptext3 E2 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 countDelay@n 2A 0 BANK0 1
@@ -125,7 +125,7 @@ __Lstack 0 0 STACK 2
 _scratch 32 0 BANK0 1
 __Hspace_0 2008 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__end_of_isr CA 0 CODE 0
+__end_of_isr CC 0 CODE 0
 __Hspace_1 34 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hspace_2 0 0 ABS 0
@@ -139,7 +139,7 @@ i1countDelay@x 22 0 BANK0 1
 __HbssBANK0 0 0 ABS 0
 __LbssBANK0 0 0 ABS 0
 __pbssBANK0 2E 0 BANK0 1
-_countDelay CA 0 CODE 0
+_countDelay CC 0 CODE 0
 __CFG_PWRTE$OFF 0 0 ABS 0
 __size_of_countDelay 0 0 ABS 0
 _INTCONbits B 0 ABS 0
@@ -154,7 +154,7 @@ __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 CODE 0
 intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
-__end_of_countDelay E0 0 CODE 0
+__end_of_countDelay E2 0 CODE 0
 intlevel4 0 0 CODE 0
 intlevel5 0 0 CODE 0
 __HcstackCOMMON 0 0 ABS 0
@@ -169,17 +169,17 @@ __Lmaintext 0 0 ABS 0
 __pmaintext 1C 0 CODE 0
 _OPTION_REGbits 81 0 ABS 0
 __initialization 13 0 CODE 0
-i1_countDelay E0 0 CODE 0
+i1_countDelay E2 0 CODE 0
 __CFG_CP$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
-intentry 8 1EB CODE 8 0
+intentry 8 1EF CODE 8 0
 config 400E 400F CONFIG 400E 0
 cstackBANK0 20 33 BANK0 20 1
 %locals
 dist/default/production/logic-clock.X.production.obj
-/tmp/xcX1yOpAH
+/tmp/xcXyu8a96
 240 13 0 CODE 0
 243 13 0 CODE 0
 260 13 0 CODE 0
@@ -236,38 +236,40 @@ main.c
 133 58 0 CODE 0
 134 59 0 CODE 0
 135 5A 0 CODE 0
-138 64 0 CODE 0
-155 65 0 CODE 0
-156 6D 0 CODE 0
-157 72 0 CODE 0
-158 7E 0 CODE 0
-161 80 0 CODE 0
-141 87 0 CODE 0
-165 CA 0 CODE 0
-166 CA 0 CODE 0
-167 CE 0 CODE 0
-168 D9 0 CODE 0
-167 DF 0 CODE 0
-24 88 0 CODE 0
-25 88 0 CODE 0
-28 8F 0 CODE 0
-29 94 0 CODE 0
-32 96 0 CODE 0
-34 9A 0 CODE 0
-35 9C 0 CODE 0
-36 A0 0 CODE 0
-37 A1 0 CODE 0
-39 A6 0 CODE 0
-42 A8 0 CODE 0
-43 AF 0 CODE 0
-44 B2 0 CODE 0
-45 B9 0 CODE 0
-47 BC 0 CODE 0
-51 BE 0 CODE 0
-52 BF 0 CODE 0
+136 5B 0 CODE 0
+137 5C 0 CODE 0
+140 66 0 CODE 0
+157 67 0 CODE 0
+158 6F 0 CODE 0
+159 74 0 CODE 0
+160 80 0 CODE 0
+163 82 0 CODE 0
+143 89 0 CODE 0
+167 CC 0 CODE 0
+168 CC 0 CODE 0
+169 D0 0 CODE 0
+170 DB 0 CODE 0
+169 E1 0 CODE 0
+24 8A 0 CODE 0
+25 8A 0 CODE 0
+28 91 0 CODE 0
+29 96 0 CODE 0
+32 98 0 CODE 0
+34 9C 0 CODE 0
+35 9E 0 CODE 0
+36 A2 0 CODE 0
+37 A3 0 CODE 0
+39 A8 0 CODE 0
+42 AA 0 CODE 0
+43 B1 0 CODE 0
+44 B4 0 CODE 0
+45 BB 0 CODE 0
+47 BE 0 CODE 0
+51 C0 0 CODE 0
+52 C1 0 CODE 0
 24 4 0 CODE 0
-165 E0 0 CODE 0
-166 E0 0 CODE 0
-167 E4 0 CODE 0
-168 EF 0 CODE 0
-167 F5 0 CODE 0
+167 E2 0 CODE 0
+168 E2 0 CODE 0
+169 E6 0 CODE 0
+170 F1 0 CODE 0
+169 F7 0 CODE 0

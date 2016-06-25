@@ -8,7 +8,7 @@
 // CONFIG
 #pragma config FOSC = XT        // 4MHz crystal
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled)
-#pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT enabled)
+#pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config BOREN = ON       // Brown-out Reset Enable bit (BOR enabled)
 #pragma config LVP = OFF        // Low-Voltage (Single-Supply) In-Circuit Serial Programming Enable bit (RB3 is digital I/O, HV on MCLR must be used for programming)
 #pragma config CPD = OFF        // Data EEPROM Memory Code Protection bit (Data EEPROM code protection off)
@@ -128,9 +128,11 @@ void main(void) {
     
     // Enable PWM output
     PR2 = 0xFF;                                     // PWM period
-    CCPR1L = 229;                                   // duty cycle MSB 90%
+    CCPR1L = 226;                                   // duty cycle MSB ~90%
     CCP1CONbits.CCP1X = CCP1CONbits.CCP1Y = 0;      // duty cycle LSB
     T2CON = 0;                                      // configure timer
+    T2CONbits.T2CKPS1 = 0;                          // prescaler 8
+    T2CONbits.T2CKPS0 = 1;
     T2CONbits.TMR2ON = 1;
     CCP1CONbits.CCP1M3 = CCP1CONbits.CCP1M2 = 1;    // PWM mode
     
@@ -139,18 +141,6 @@ void main(void) {
 
     // Main Loop
     while(1) {
-/*        if(PIR1bits.RCIF) {
-            SSPBUF = RCREG;
-            countDelay(128);
-
-            SET_PIN = 1;  // output complete
-            countDelay(128);
-            SET_PIN = 0;  // ready to output
-
-            PIR1bits.RCIF = 0;
-        }
-*/
-        
         // Heartbeat
         heartbeat++;
         if(heartbeat == 200) {

@@ -13,14 +13,14 @@
 %PSECTS
 $dist/default/production/logic-clock.X.production.obj
 cinit CODE 0 13 13 9 2
-text1 CODE 0 CA CA 16 2
-text2 CODE 0 88 88 42 2
-text3 CODE 0 E0 E0 16 2
-maintext CODE 0 1C 1C 6C 2
+text1 CODE 0 CC CC 16 2
+text2 CODE 0 8A 8A 42 2
+text3 CODE 0 E2 E2 16 2
+maintext CODE 0 1C 1C 6E 2
 cstackBANK0 BANK0 1 20 20 E 1
 intentry CODE 0 4 4 D 2
 bssBANK0 BANK0 1 2E 2E 6 1
-$/tmp/xcXSnFTAP.obj
+$/tmp/xcXcc3bHz.obj
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 11 11 2 2
 config CONFIG 0 2007 2007 1 2
@@ -35,22 +35,22 @@ RAM A0-FD 1
 BANK0 34-7D 1
 BANK1 A0-FD 1
 CONST 2-3 2
-CONST F6-FFF 2
+CONST F8-FFF 2
 ENTRY 2-3 2
-ENTRY F6-FFF 2
+ENTRY F8-FFF 2
 IDLOC 2000-2003 2
 STACK A0-FD 1
 CODE 2-3 2
-CODE F6-FFF 2
+CODE F8-FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-17D 1
 SFR3 180-1FD 1
 EEDATA 2100-217F 2
 STRCODE 2-3 2
-STRCODE F6-FFF 2
+STRCODE F8-FFF 2
 STRING 2-3 2
-STRING F6-FFF 2
+STRING F8-FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -65,45 +65,45 @@ STRING F6-FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production/logic-clock.X.production.obj
-13 cinit CODE >240:/tmp/xcX1yOpAH
-13 cinit CODE >243:/tmp/xcX1yOpAH
-13 cinit CODE >260:/tmp/xcX1yOpAH
-14 cinit CODE >261:/tmp/xcX1yOpAH
-15 cinit CODE >262:/tmp/xcX1yOpAH
-16 cinit CODE >263:/tmp/xcX1yOpAH
-17 cinit CODE >264:/tmp/xcX1yOpAH
-18 cinit CODE >265:/tmp/xcX1yOpAH
-19 cinit CODE >271:/tmp/xcX1yOpAH
-19 cinit CODE >273:/tmp/xcX1yOpAH
-1A cinit CODE >274:/tmp/xcX1yOpAH
+13 cinit CODE >240:/tmp/xcXyu8a96
+13 cinit CODE >243:/tmp/xcXyu8a96
+13 cinit CODE >260:/tmp/xcXyu8a96
+14 cinit CODE >261:/tmp/xcXyu8a96
+15 cinit CODE >262:/tmp/xcXyu8a96
+16 cinit CODE >263:/tmp/xcXyu8a96
+17 cinit CODE >264:/tmp/xcXyu8a96
+18 cinit CODE >265:/tmp/xcXyu8a96
+19 cinit CODE >271:/tmp/xcXyu8a96
+19 cinit CODE >273:/tmp/xcXyu8a96
+1A cinit CODE >274:/tmp/xcXyu8a96
 4 intentry CODE >24:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-E0 text3 CODE >165:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-E0 text3 CODE >166:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-E4 text3 CODE >167:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-EF text3 CODE >168:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-F5 text3 CODE >167:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-88 text2 CODE >24:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-88 text2 CODE >25:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-8F text2 CODE >28:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-94 text2 CODE >29:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-96 text2 CODE >32:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-9A text2 CODE >34:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-9C text2 CODE >35:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-A0 text2 CODE >36:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-A1 text2 CODE >37:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-A6 text2 CODE >39:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-A8 text2 CODE >42:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-AF text2 CODE >43:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-B2 text2 CODE >44:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-B9 text2 CODE >45:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-BC text2 CODE >47:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-BE text2 CODE >51:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-BF text2 CODE >52:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-CA text1 CODE >165:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-CA text1 CODE >166:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-CE text1 CODE >167:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-D9 text1 CODE >168:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-DF text1 CODE >167:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+E2 text3 CODE >167:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+E2 text3 CODE >168:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+E6 text3 CODE >169:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+F1 text3 CODE >170:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+F7 text3 CODE >169:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+8A text2 CODE >24:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+8A text2 CODE >25:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+91 text2 CODE >28:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+96 text2 CODE >29:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+98 text2 CODE >32:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+9C text2 CODE >34:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+9E text2 CODE >35:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+A2 text2 CODE >36:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+A3 text2 CODE >37:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+A8 text2 CODE >39:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+AA text2 CODE >42:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+B1 text2 CODE >43:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+B4 text2 CODE >44:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+BB text2 CODE >45:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+BE text2 CODE >47:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+C0 text2 CODE >51:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+C1 text2 CODE >52:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+CC text1 CODE >167:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+CC text1 CODE >168:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+D0 text1 CODE >169:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+DB text1 CODE >170:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+E1 text1 CODE >169:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
 1C maintext CODE >54:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
 1C maintext CODE >56:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
 1D maintext CODE >59:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
@@ -148,13 +148,15 @@ DF text1 CODE >167:/home/michael/documents/projects/logic-clock/logic-clock.X/ma
 58 maintext CODE >133:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
 59 maintext CODE >134:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
 5A maintext CODE >135:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-64 maintext CODE >138:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-65 maintext CODE >155:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-6D maintext CODE >156:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-72 maintext CODE >157:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-7E maintext CODE >158:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-80 maintext CODE >161:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
-87 maintext CODE >141:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+5B maintext CODE >136:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+5C maintext CODE >137:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+66 maintext CODE >140:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+67 maintext CODE >157:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+6F maintext CODE >158:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+74 maintext CODE >159:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+80 maintext CODE >160:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+82 maintext CODE >163:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
+89 maintext CODE >143:/home/michael/documents/projects/logic-clock/logic-clock.X/main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -173,18 +175,18 @@ __Hspace_1 34 0 ABS 0 - -
 __Hspace_2 0 0 ABS 0 - -
 __Hspace_3 0 0 ABS 0 - -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
-i1_countDelay 1C0 0 CODE 0 text3 dist/default/production/logic-clock.X.production.obj
+i1_countDelay 1C4 0 CODE 0 text3 dist/default/production/logic-clock.X.production.obj
 ltemp0 7E 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 ltemp1 82 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 ltemp2 86 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 ltemp3 80 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 __Hstrings 0 0 ABS 0 strings -
 __size_of_countDelay 0 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcXSnFTAP.obj
+___sp 0 0 STACK 2 stack /tmp/xcXcc3bHz.obj
 _main 38 0 CODE 0 maintext dist/default/production/logic-clock.X.production.obj
 btemp 7E 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
-start 22 0 CODE 0 init /tmp/xcXSnFTAP.obj
+start 22 0 CODE 0 init /tmp/xcXcc3bHz.obj
 ttemp 7E 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
@@ -195,12 +197,12 @@ ttemp1 81 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 ttemp2 84 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 ttemp3 87 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 ttemp4 7F 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
-intlevel0 0 0 CODE 0 functab /tmp/xcXSnFTAP.obj
-intlevel1 0 0 CODE 0 functab /tmp/xcXSnFTAP.obj
-intlevel2 0 0 CODE 0 functab /tmp/xcXSnFTAP.obj
-intlevel3 0 0 CODE 0 functab /tmp/xcXSnFTAP.obj
-intlevel4 0 0 CODE 0 functab /tmp/xcXSnFTAP.obj
-intlevel5 0 0 CODE 0 functab /tmp/xcXSnFTAP.obj
+intlevel0 0 0 CODE 0 functab /tmp/xcXcc3bHz.obj
+intlevel1 0 0 CODE 0 functab /tmp/xcXcc3bHz.obj
+intlevel2 0 0 CODE 0 functab /tmp/xcXcc3bHz.obj
+intlevel3 0 0 CODE 0 functab /tmp/xcXcc3bHz.obj
+intlevel4 0 0 CODE 0 functab /tmp/xcXcc3bHz.obj
+intlevel5 0 0 CODE 0 functab /tmp/xcXcc3bHz.obj
 __size_ofi1_countDelay 0 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 _CMCONbits 9C 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 wtemp0 7E 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
@@ -213,7 +215,7 @@ wtemp6 7F 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
 _ADCON1 9F 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
-__end_ofi1_countDelay 1EC 0 CODE 0 text3 dist/default/production/logic-clock.X.production.obj
+__end_ofi1_countDelay 1F0 0 CODE 0 text3 dist/default/production/logic-clock.X.production.obj
 _SSPCONbits 14 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 _CCPR1L 15 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 __Lmaintext 0 0 ABS 0 maintext -
@@ -221,7 +223,7 @@ start_initialization 26 0 CODE 0 cinit dist/default/production/logic-clock.X.pro
 _TRISCbits 87 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production/logic-clock.X.production.obj
 _SSPBUF 13 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
-___int_sp 0 0 STACK 2 stack /tmp/xcXSnFTAP.obj
+___int_sp 0 0 STACK 2 stack /tmp/xcXcc3bHz.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
@@ -269,16 +271,16 @@ __S0 2008 0 ABS 0 - -
 __S1 34 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_isr 110 0 CODE 0 text2 dist/default/production/logic-clock.X.production.obj
+_isr 114 0 CODE 0 text2 dist/default/production/logic-clock.X.production.obj
 saved_w 7E 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
-__end_of_isr 194 0 CODE 0 text2 dist/default/production/logic-clock.X.production.obj
+__end_of_isr 198 0 CODE 0 text2 dist/default/production/logic-clock.X.production.obj
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec /tmp/xcXSnFTAP.obj
+reset_vec 0 0 CODE 0 reset_vec /tmp/xcXcc3bHz.obj
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _RCSTAbits 18 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 _PIE1bits 8C 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
-_countDelay 194 0 CODE 0 text1 dist/default/production/logic-clock.X.production.obj
+_countDelay 198 0 CODE 0 text1 dist/default/production/logic-clock.X.production.obj
 __pmaintext 38 0 CODE 0 maintext dist/default/production/logic-clock.X.production.obj
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
@@ -287,8 +289,8 @@ __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 i1countDelay@n 20 0 BANK0 1 cstackBANK0 dist/default/production/logic-clock.X.production.obj
 i1countDelay@x 22 0 BANK0 1 cstackBANK0 dist/default/production/logic-clock.X.production.obj
 _scratch 32 0 BANK0 1 bssBANK0 dist/default/production/logic-clock.X.production.obj
-stackhi 0 0 ABS 0 - /tmp/xcXSnFTAP.obj
-stacklo 0 0 ABS 0 - /tmp/xcXSnFTAP.obj
+stackhi 0 0 ABS 0 - /tmp/xcXcc3bHz.obj
+stacklo 0 0 ABS 0 - /tmp/xcXcc3bHz.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
@@ -300,13 +302,13 @@ __Lend_init 22 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization 32 0 CODE 0 cinit dist/default/production/logic-clock.X.production.obj
 __Hintentry 22 0 CODE 0 intentry -
-__end_of_countDelay 1C0 0 CODE 0 text1 dist/default/production/logic-clock.X.production.obj
+__end_of_countDelay 1C4 0 CODE 0 text1 dist/default/production/logic-clock.X.production.obj
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 4 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 194 0 CODE 0 text1 dist/default/production/logic-clock.X.production.obj
-__ptext2 110 0 CODE 0 text2 dist/default/production/logic-clock.X.production.obj
-__ptext3 1C0 0 CODE 0 text3 dist/default/production/logic-clock.X.production.obj
+__ptext1 198 0 CODE 0 text1 dist/default/production/logic-clock.X.production.obj
+__ptext2 114 0 CODE 0 text2 dist/default/production/logic-clock.X.production.obj
+__ptext3 1C4 0 CODE 0 text3 dist/default/production/logic-clock.X.production.obj
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
@@ -317,7 +319,7 @@ __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 0 0 COMMON 1 cstackCOMMON dist/default/production/logic-clock.X.production.obj
 _TXSTAbits 98 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 __Hend_init 26 0 CODE 0 end_init -
-__end_of_main 110 0 CODE 0 maintext dist/default/production/logic-clock.X.production.obj
+__end_of_main 114 0 CODE 0 maintext dist/default/production/logic-clock.X.production.obj
 _PORTA 5 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 _PORTB 6 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 _PORTC 7 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
@@ -367,6 +369,6 @@ _STATUSbits 3 0 ABS 0 - dist/default/production/logic-clock.X.production.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 cstackBANK0 1 20 20 14 1
-intentry 0 4 8 F2 2
+intentry 0 4 8 F4 2
 reset_vec 0 0 0 2 2
 config 0 2007 400E 1 2
