@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = Tue 31 May 2016 04:08:31 PM EDT
+Cmp-Mod V01 Created by CvPcb (2013-jul-07)-stable date = Sun 05 Jun 2016 05:12:02 PM EDT
 
 BeginCmp
 TimeStamp = /574BB7F4/56F2F8F8;
@@ -781,7 +781,7 @@ BeginCmp
 TimeStamp = /574BB7F4/56F30351;
 Reference = U6;
 ValeurCmp = 4511;
-IdModule  = DIP-16__300_ELL;
+IdModule  = DIP-16__300;
 EndCmp
 
 BeginCmp
@@ -802,35 +802,35 @@ BeginCmp
 TimeStamp = /574BB7F4/574BF4EC;
 Reference = U9;
 ValeurCmp = 4511;
-IdModule  = DIP-16__300_ELL;
+IdModule  = DIP-16__300;
 EndCmp
 
 BeginCmp
 TimeStamp = /574BB7F4/574BEC64;
 Reference = U10;
 ValeurCmp = 4511;
-IdModule  = DIP-16__300_ELL;
+IdModule  = DIP-16__300;
 EndCmp
 
 BeginCmp
 TimeStamp = /574BB7F4/574BEC22;
 Reference = U11;
 ValeurCmp = 4511;
-IdModule  = DIP-16__300_ELL;
+IdModule  = DIP-16__300;
 EndCmp
 
 BeginCmp
 TimeStamp = /574BB7F4/574BEA7F;
 Reference = U12;
 ValeurCmp = 4511;
-IdModule  = DIP-16__300_ELL;
+IdModule  = DIP-16__300;
 EndCmp
 
 BeginCmp
 TimeStamp = /574BB7F4/574BE79E;
 Reference = U13;
 ValeurCmp = 4511;
-IdModule  = DIP-16__300_ELL;
+IdModule  = DIP-16__300;
 EndCmp
 
 EndListe

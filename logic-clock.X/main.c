@@ -125,7 +125,15 @@ void main(void) {
     INTCONbits.INTF = 0;
     INTCONbits.TMR0IE = 0;      // timer interrupt
     INTCONbits.RBIE = 0;        // PORTB change interrupt
-
+    
+    // Enable PWM output
+    PR2 = 0xFF;                                     // PWM period
+    CCPR1L = 229;                                   // duty cycle MSB 90%
+    CCP1CONbits.CCP1X = CCP1CONbits.CCP1Y = 0;      // duty cycle LSB
+    T2CON = 0;                                      // configure timer
+    T2CONbits.TMR2ON = 1;
+    CCP1CONbits.CCP1M3 = CCP1CONbits.CCP1M2 = 1;    // PWM mode
+    
     // Enable Interrupts
     INTCONbits.GIE = 1;
 

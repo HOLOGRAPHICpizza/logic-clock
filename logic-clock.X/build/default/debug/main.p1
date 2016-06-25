@@ -1,6 +1,28 @@
 Version 3.2 HI-TECH Software Intermediate Code
+"939 /opt/microchip/xc8/v1.36/include/pic16f873a.h
+[v _RCREG `Vuc ~T0 @X0 0 e@26 ]
+"689
+[v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
+"25 main.h
+[v _countDelay `(v ~T0 @X0 0 ef1`i ]
+"276 /opt/microchip/xc8/v1.36/include/pic16f873a.h
+[s S11 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S11 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"275
+[u S10 `S11 1 ]
+[n S10 . . ]
+"287
+[v _PORTCbits `VS10 ~T0 @X0 0 e@7 ]
+"433
+[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S18 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
+"432
+[u S17 `S18 1 ]
+[n S17 . . ]
+"443
+[v _PIR1bits `VS17 ~T0 @X0 0 e@12 ]
 [p mainexit ]
-"356 /opt/microchip/xc8/v1.36/include/pic16f873a.h
+"356
 [s S15 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S15 . RBIF INTF TMR0IF RBIE INTE TMR0IE PEIE GIE ]
 "366
@@ -150,14 +172,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S28 . . . ]
 "715
 [v _SSPCONbits `VS28 ~T0 @X0 0 e@20 ]
-"433
-[s S18 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S18 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF ]
-"432
-[u S17 `S18 1 ]
-[n S17 . . ]
-"443
-[v _PIR1bits `VS17 ~T0 @X0 0 e@12 ]
 "166
 [s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S7 . RA0 RA1 RA2 RA3 RA4 RA5 ]
@@ -166,8 +180,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S6 . . ]
 "175
 [v _PORTAbits `VS6 ~T0 @X0 0 e@5 ]
-"23 main.h
-[v _countDelay `(v ~T0 @X0 0 ef1`i ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1108,7 +1120,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "16
 [p x CP=OFF ]
-[; ;main.h: 23: void countDelay(int n);
+[; ;main.h: 25: void countDelay(int n);
 "20
 [v _scratch `i ~T0 @X0 1 e ]
 [i _scratch
@@ -1121,204 +1133,274 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;main.c: 21: int heartbeat = 0;
-[v F992 `(v ~T0 @X0 1 tf ]
-"23
-[v _isr `IF992 ~T0 @X0 1 e ]
+"22
+[v _currentByte `i ~T0 @X0 1 e ]
+[i _currentByte
+-> 0 `i
+]
+[; ;main.c: 22: int currentByte = 0;
+[v F993 `(v ~T0 @X0 1 tf ]
+"24
+[v _isr `IF993 ~T0 @X0 1 e ]
 {
-[; ;main.c: 23: void interrupt isr(void) {
+[; ;main.c: 24: void interrupt isr(void) {
 [e :U _isr ]
 [f ]
-[; ;main.c: 24: scratch++;
-"24
-[e ++ _scratch -> 1 `i ]
-[; ;main.c: 25: }
+[; ;main.c: 25: scratch = RCREG;
 "25
-[e :UE 88 ]
-}
-"27
-[v _main `(v ~T0 @X0 1 ef ]
+[e = _scratch -> _RCREG `i ]
+[; ;main.c: 28: if(scratch == 0xCC) {
+"28
+[e $ ! == _scratch -> 204 `i 89  ]
 {
-[; ;main.c: 27: void main(void) {
-[e :U _main ]
-[f ]
-[; ;main.c: 29: INTCONbits.GIE = 0;
+[; ;main.c: 29: currentByte = 1;
 "29
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-[; ;main.c: 32: PORTA = 0;
+[e = _currentByte -> 1 `i ]
+"30
+}
+[; ;main.c: 30: }
+[e $U 90  ]
+"31
+[e :U 89 ]
+[; ;main.c: 31: else {
+{
+[; ;main.c: 32: if(currentByte == 1) {
 "32
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 33: PORTB = 0;
-"33
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 34: PORTC = 0;
+[e $ ! == _currentByte -> 1 `i 91  ]
+{
+[; ;main.c: 34: SSPBUF = scratch;
 "34
-[e = _PORTC -> -> 0 `i `uc ]
-[; ;main.c: 37: STATUSbits.RP1 = 0; STATUSbits.RP0 = 1;;
+[e = _SSPBUF -> _scratch `uc ]
+[; ;main.c: 35: currentByte = 2;
+"35
+[e = _currentByte -> 2 `i ]
+"36
+}
+[; ;main.c: 36: }
+[e $U 92  ]
 "37
-[e = . . _STATUSbits 1 2 -> -> 0 `i `uc ]
-[e = . . _STATUSbits 1 1 -> -> 1 `i `uc ]
-[; ;main.c: 40: ADCON1 = 0x06;
-"40
-[e = _ADCON1 -> -> 6 `i `uc ]
-[; ;main.c: 43: CMCONbits.CM0 = 1;
-"43
-[e = . . _CMCONbits 1 0 -> -> 1 `i `uc ]
-[; ;main.c: 44: CMCONbits.CM1 = 1;
-"44
-[e = . . _CMCONbits 1 1 -> -> 1 `i `uc ]
-[; ;main.c: 45: CMCONbits.CM2 = 1;
-"45
-[e = . . _CMCONbits 1 2 -> -> 1 `i `uc ]
-[; ;main.c: 48: OPTION_REGbits.T0CS = 0;
-"48
-[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 51: TRISA = 0;
-"51
-[e = _TRISA -> -> 0 `i `uc ]
-[; ;main.c: 52: TRISB = 0;
-"52
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;main.c: 53: TRISC = 0;
-"53
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;main.c: 59: TRISCbits.TRISC7 = 1;
-"59
-[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 62: TXSTAbits.TXEN = 0;
-"62
-[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 63: TXSTAbits.SYNC = 0;
-"63
-[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-[; ;main.c: 64: TXSTAbits.BRGH = 1;
-"64
-[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 65: SPBRG = 25;
-"65
-[e = _SPBRG -> -> 25 `i `uc ]
-[; ;main.c: 68: SSPSTATbits.CKE = 1;
-"68
-[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 71: PIE1bits.RCIE = 1;
-"71
-[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
-[; ;main.c: 74: STATUSbits.RP1 = 0; STATUSbits.RP0 = 0;;
-"74
-[e = . . _STATUSbits 1 2 -> -> 0 `i `uc ]
-[e = . . _STATUSbits 1 1 -> -> 0 `i `uc ]
-[; ;main.c: 77: PORTA = 0;
-"77
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;main.c: 78: PORTB = 0;
-"78
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;main.c: 79: PORTC = 0;
-"79
-[e = _PORTC -> -> 0 `i `uc ]
-[; ;main.c: 82: RCSTAbits.RX9 = 0;
-"82
-[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-[; ;main.c: 83: RCSTAbits.ADDEN = 0;
-"83
-[e = . . _RCSTAbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 84: RCSTAbits.SPEN = 1;
-"84
-[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 85: RCSTAbits.CREN = 1;
-"85
-[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 88: SSPCONbits.CKP = 0;
-"88
-[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 89: SSPCONbits.SSPM = 0b0010;
-"89
-[e = . . _SSPCONbits 0 0 -> -> 2 `i `uc ]
-[; ;main.c: 90: SSPCONbits.SSPEN = 1;
-"90
-[e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
-[; ;main.c: 93: INTCONbits.PEIE = 1;
-"93
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-[; ;main.c: 94: PIR1bits.RCIF = 0;
-"94
-[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 97: INTCONbits.INTE = 1;
-"97
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-[; ;main.c: 98: INTCONbits.INTF = 0;
-"98
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-[; ;main.c: 99: INTCONbits.TMR0IE = 0;
-"99
-[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
-[; ;main.c: 100: INTCONbits.RBIE = 0;
-"100
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-[; ;main.c: 103: INTCONbits.GIE = 1;
-"103
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-[; ;main.c: 106: while(1) {
-"106
 [e :U 91 ]
+[; ;main.c: 37: else if(currentByte == 2) {
+[e $ ! == _currentByte -> 2 `i 93  ]
 {
-[; ;main.c: 120: heartbeat++;
-"120
-[e ++ _heartbeat -> 1 `i ]
-[; ;main.c: 121: if(heartbeat == 200) {
-"121
-[e $ ! == _heartbeat -> 200 `i 93  ]
-{
-[; ;main.c: 122: PORTAbits.RA0 = ~PORTAbits.RA0;
-"122
-[e = . . _PORTAbits 0 0 -> ~ -> . . _PORTAbits 0 0 `i `uc ]
-[; ;main.c: 123: heartbeat = 0;
-"123
-[e = _heartbeat -> 0 `i ]
-"124
+[; ;main.c: 39: SSPBUF = scratch;
+"39
+[e = _SSPBUF -> _scratch `uc ]
+[; ;main.c: 42: countDelay(128);
+"42
+[e ( _countDelay (1 -> 128 `i ]
+[; ;main.c: 43: PORTCbits.RC2 = 1;
+"43
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 44: countDelay(128);
+"44
+[e ( _countDelay (1 -> 128 `i ]
+[; ;main.c: 45: PORTCbits.RC2 = 0;
+"45
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 47: currentByte = 0;
+"47
+[e = _currentByte -> 0 `i ]
+"48
 }
 [e :U 93 ]
-[; ;main.c: 124: }
-[; ;main.c: 126: countDelay(128);
-"126
-[e ( _countDelay (1 -> 128 `i ]
-"127
+"49
+[e :U 92 ]
 }
 [e :U 90 ]
-"106
-[e $U 91  ]
-[e :U 92 ]
-[; ;main.c: 127: }
-[; ;main.c: 128: }
-"128
-[e :UE 89 ]
+[; ;main.c: 48: }
+[; ;main.c: 49: }
+[; ;main.c: 51: PIR1bits.RCIF = 0;
+"51
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 52: }
+"52
+[e :UE 88 ]
 }
+"54
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 54: void main(void) {
+[e :U _main ]
+[f ]
+[; ;main.c: 56: INTCONbits.GIE = 0;
+"56
+[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
+[; ;main.c: 59: PORTA = 0;
+"59
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 60: PORTB = 0;
+"60
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 61: PORTC = 0;
+"61
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;main.c: 64: STATUSbits.RP1 = 0; STATUSbits.RP0 = 1;;
+"64
+[e = . . _STATUSbits 1 2 -> -> 0 `i `uc ]
+[e = . . _STATUSbits 1 1 -> -> 1 `i `uc ]
+[; ;main.c: 67: ADCON1 = 0x06;
+"67
+[e = _ADCON1 -> -> 6 `i `uc ]
+[; ;main.c: 70: CMCONbits.CM0 = 1;
+"70
+[e = . . _CMCONbits 1 0 -> -> 1 `i `uc ]
+[; ;main.c: 71: CMCONbits.CM1 = 1;
+"71
+[e = . . _CMCONbits 1 1 -> -> 1 `i `uc ]
+[; ;main.c: 72: CMCONbits.CM2 = 1;
+"72
+[e = . . _CMCONbits 1 2 -> -> 1 `i `uc ]
+[; ;main.c: 75: OPTION_REGbits.T0CS = 0;
+"75
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 78: TRISA = 0;
+"78
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;main.c: 79: TRISB = 0;
+"79
+[e = _TRISB -> -> 0 `i `uc ]
+[; ;main.c: 80: TRISC = 0;
+"80
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;main.c: 86: TRISCbits.TRISC7 = 1;
+"86
+[e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 89: TXSTAbits.TXEN = 0;
+"89
+[e = . . _TXSTAbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 90: TXSTAbits.SYNC = 0;
+"90
+[e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
+[; ;main.c: 91: TXSTAbits.BRGH = 1;
+"91
+[e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 92: SPBRG = 25;
+"92
+[e = _SPBRG -> -> 25 `i `uc ]
+[; ;main.c: 95: SSPSTATbits.CKE = 1;
+"95
+[e = . . _SSPSTATbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 98: PIE1bits.RCIE = 1;
+"98
+[e = . . _PIE1bits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 101: STATUSbits.RP1 = 0; STATUSbits.RP0 = 0;;
+"101
+[e = . . _STATUSbits 1 2 -> -> 0 `i `uc ]
+[e = . . _STATUSbits 1 1 -> -> 0 `i `uc ]
+[; ;main.c: 104: PORTA = 0;
+"104
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 105: PORTB = 0;
+"105
+[e = _PORTB -> -> 0 `i `uc ]
+[; ;main.c: 106: PORTC = 0;
+"106
+[e = _PORTC -> -> 0 `i `uc ]
+[; ;main.c: 109: RCSTAbits.RX9 = 0;
+"109
+[e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
+[; ;main.c: 110: RCSTAbits.ADDEN = 0;
+"110
+[e = . . _RCSTAbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 111: RCSTAbits.SPEN = 1;
+"111
+[e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 112: RCSTAbits.CREN = 1;
+"112
+[e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 115: SSPCONbits.CKP = 0;
+"115
+[e = . . _SSPCONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 116: SSPCONbits.SSPM = 0b0010;
+"116
+[e = . . _SSPCONbits 0 0 -> -> 2 `i `uc ]
+[; ;main.c: 117: SSPCONbits.SSPEN = 1;
+"117
+[e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
+[; ;main.c: 120: INTCONbits.PEIE = 1;
+"120
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 121: PIR1bits.RCIF = 0;
+"121
+[e = . . _PIR1bits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 124: INTCONbits.INTE = 1;
+"124
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
+[; ;main.c: 125: INTCONbits.INTF = 0;
+"125
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 126: INTCONbits.TMR0IE = 0;
+"126
+[e = . . _INTCONbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 127: INTCONbits.RBIE = 0;
+"127
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+[; ;main.c: 130: INTCONbits.GIE = 1;
 "130
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 133: while(1) {
+"133
+[e :U 96 ]
+{
+[; ;main.c: 147: heartbeat++;
+"147
+[e ++ _heartbeat -> 1 `i ]
+[; ;main.c: 148: if(heartbeat == 200) {
+"148
+[e $ ! == _heartbeat -> 200 `i 98  ]
+{
+[; ;main.c: 149: PORTAbits.RA0 = ~PORTAbits.RA0;
+"149
+[e = . . _PORTAbits 0 0 -> ~ -> . . _PORTAbits 0 0 `i `uc ]
+[; ;main.c: 150: heartbeat = 0;
+"150
+[e = _heartbeat -> 0 `i ]
+"151
+}
+[e :U 98 ]
+[; ;main.c: 151: }
+[; ;main.c: 153: countDelay(128);
+"153
+[e ( _countDelay (1 -> 128 `i ]
+"154
+}
+[e :U 95 ]
+"133
+[e $U 96  ]
+[e :U 97 ]
+[; ;main.c: 154: }
+[; ;main.c: 155: }
+"155
+[e :UE 94 ]
+}
+"157
 [v _countDelay `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;main.c: 130: void countDelay(int n) {
+[; ;main.c: 157: void countDelay(int n) {
 [e :U _countDelay ]
 [v _n `i ~T0 @X0 1 r1 ]
 [f ]
-"131
+"158
 [v _x `i ~T0 @X0 1 a ]
-[; ;main.c: 131: int x = 0;
+[; ;main.c: 158: int x = 0;
 [e = _x -> 0 `i ]
-[; ;main.c: 132: while(n--) {
-"132
-[e $U 95  ]
-[e :U 96 ]
+[; ;main.c: 159: while(n--) {
+"159
+[e $U 100  ]
+[e :U 101 ]
 {
-[; ;main.c: 133: x++;
-"133
+[; ;main.c: 160: x++;
+"160
 [e ++ _x -> 1 `i ]
-"134
+"161
 }
-[e :U 95 ]
-"132
-[e $ != -- _n -> 1 `i -> 0 `i 96  ]
-[e :U 97 ]
-[; ;main.c: 134: }
-[; ;main.c: 135: }
-"135
-[e :UE 94 ]
+[e :U 100 ]
+"159
+[e $ != -- _n -> 1 `i -> 0 `i 101  ]
+[e :U 102 ]
+[; ;main.c: 161: }
+[; ;main.c: 162: }
+"162
+[e :UE 99 ]
 }

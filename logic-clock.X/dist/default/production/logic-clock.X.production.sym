@@ -1,4 +1,5 @@
 __CFG_WRT$OFF 0 0 ABS 0
+_PR2 92 0 ABS 0
 __S0 2008 0 ABS 0
 __S1 34 0 ABS 0
 __S2 0 0 ABS 0
@@ -7,7 +8,7 @@ __Hintentry 11 0 CODE 0
 __Lintentry 4 0 CODE 0
 __CFG_BOREN$ON 0 0 ABS 0
 __pintentry 4 0 CODE 0
-_isr 72 0 CODE 0
+_isr 88 0 CODE 0
 __size_ofi1_countDelay 0 0 ABS 0
 _main 1C 0 CODE 0
 ___sp 0 0 STACK 2
@@ -26,6 +27,7 @@ reset_vec 0 0 CODE 0
 _PORTB 6 0 ABS 0
 _SPBRG 99 0 ABS 0
 _PORTC 7 0 ABS 0
+_T2CON 12 0 ABS 0
 ltemp0 7E 0 ABS 0
 ttemp0 7E 0 ABS 0
 wtemp0 7E 0 ABS 0
@@ -58,6 +60,7 @@ __Heeprom_data 0 0 EEDATA 3
 __Leeprom_data 0 0 EEDATA 3
 _PIR1bits C 0 ABS 0
 ___int_sp 0 0 STACK 2
+_CCPR1L 15 0 ABS 0
 _SSPBUF 13 0 ABS 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
@@ -79,12 +82,12 @@ stacklo 0 0 ABS 0
 saved_w 7E 0 ABS 0
 __Hinit 11 0 CODE 0
 __Linit 11 0 CODE 0
-__end_of_main 72 0 CODE 0
+__end_of_main 88 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 end_of_initialization 19 0 CODE 0
 _heartbeat 30 0 BANK0 1
-__end_ofi1_countDelay E0 0 CODE 0
+__end_ofi1_countDelay F6 0 CODE 0
 __CFG_FOSC$XT 0 0 ABS 0
 _RCSTAbits 18 0 ABS 0
 _TRISCbits 87 0 ABS 0
@@ -92,6 +95,7 @@ _PORTAbits 5 0 ABS 0
 _TXSTAbits 98 0 ABS 0
 _PORTCbits 7 0 ABS 0
 __Hstrings 0 0 ABS 0
+_T2CONbits 12 0 ABS 0
 __Lstrings 0 0 ABS 0
 _CMCONbits 9C 0 ABS 0
 __Hbank0 0 0 ABS 0
@@ -105,13 +109,14 @@ __Lbank3 0 0 BANK3 1
 ___latbits 1 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-__ptext1 B4 0 CODE 0
-__ptext2 72 0 CODE 0
-__ptext3 CA 0 CODE 0
+__ptext1 CA 0 CODE 0
+__ptext2 88 0 CODE 0
+__ptext3 E0 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 countDelay@n 2A 0 BANK0 1
 __end_of__initialization 19 0 CODE 0
+_CCP1CONbits 17 0 ABS 0
 _SSPSTATbits 94 0 ABS 0
 __Hidloc 0 0 IDLOC 0
 __Lidloc 0 0 IDLOC 0
@@ -120,7 +125,7 @@ __Lstack 0 0 STACK 2
 _scratch 32 0 BANK0 1
 __Hspace_0 2008 0 ABS 0
 __Lspace_0 0 0 ABS 0
-__end_of_isr B4 0 CODE 0
+__end_of_isr CA 0 CODE 0
 __Hspace_1 34 0 ABS 0
 __Lspace_1 0 0 ABS 0
 __Hspace_2 0 0 ABS 0
@@ -134,7 +139,7 @@ i1countDelay@x 22 0 BANK0 1
 __HbssBANK0 0 0 ABS 0
 __LbssBANK0 0 0 ABS 0
 __pbssBANK0 2E 0 BANK0 1
-_countDelay B4 0 CODE 0
+_countDelay CA 0 CODE 0
 __CFG_PWRTE$OFF 0 0 ABS 0
 __size_of_countDelay 0 0 ABS 0
 _INTCONbits B 0 ABS 0
@@ -149,7 +154,7 @@ __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 CODE 0
 intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
-__end_of_countDelay CA 0 CODE 0
+__end_of_countDelay E0 0 CODE 0
 intlevel4 0 0 CODE 0
 intlevel5 0 0 CODE 0
 __HcstackCOMMON 0 0 ABS 0
@@ -164,28 +169,28 @@ __Lmaintext 0 0 ABS 0
 __pmaintext 1C 0 CODE 0
 _OPTION_REGbits 81 0 ABS 0
 __initialization 13 0 CODE 0
-i1_countDelay CA 0 CODE 0
+i1_countDelay E0 0 CODE 0
 __CFG_CP$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
-intentry 8 1BF CODE 8 0
+intentry 8 1EB CODE 8 0
 config 400E 400F CONFIG 400E 0
 cstackBANK0 20 33 BANK0 20 1
 %locals
 dist/default/production/logic-clock.X.production.obj
-/tmp/xcXKAPhgq
-230 13 0 CODE 0
-233 13 0 CODE 0
-250 13 0 CODE 0
-251 14 0 CODE 0
-252 15 0 CODE 0
-253 16 0 CODE 0
-254 17 0 CODE 0
-255 18 0 CODE 0
-261 19 0 CODE 0
-263 19 0 CODE 0
-264 1A 0 CODE 0
+/tmp/xcX1yOpAH
+240 13 0 CODE 0
+243 13 0 CODE 0
+260 13 0 CODE 0
+261 14 0 CODE 0
+262 15 0 CODE 0
+263 16 0 CODE 0
+264 17 0 CODE 0
+265 18 0 CODE 0
+271 19 0 CODE 0
+273 19 0 CODE 0
+274 1A 0 CODE 0
 main.c
 54 1C 0 CODE 0
 56 1C 0 CODE 0
@@ -226,37 +231,43 @@ main.c
 126 4C 0 CODE 0
 127 4D 0 CODE 0
 130 4E 0 CODE 0
-147 4F 0 CODE 0
-148 57 0 CODE 0
-149 5C 0 CODE 0
-150 68 0 CODE 0
-153 6A 0 CODE 0
-133 71 0 CODE 0
-157 B4 0 CODE 0
-158 B4 0 CODE 0
-159 B8 0 CODE 0
-160 C3 0 CODE 0
-159 C9 0 CODE 0
-24 72 0 CODE 0
-25 72 0 CODE 0
-28 79 0 CODE 0
-29 7E 0 CODE 0
-32 80 0 CODE 0
-34 84 0 CODE 0
-35 86 0 CODE 0
-36 8A 0 CODE 0
-37 8B 0 CODE 0
-39 90 0 CODE 0
-42 92 0 CODE 0
-43 99 0 CODE 0
-44 9C 0 CODE 0
-45 A3 0 CODE 0
-47 A6 0 CODE 0
-51 A8 0 CODE 0
-52 A9 0 CODE 0
+131 52 0 CODE 0
+132 56 0 CODE 0
+133 58 0 CODE 0
+134 59 0 CODE 0
+135 5A 0 CODE 0
+138 64 0 CODE 0
+155 65 0 CODE 0
+156 6D 0 CODE 0
+157 72 0 CODE 0
+158 7E 0 CODE 0
+161 80 0 CODE 0
+141 87 0 CODE 0
+165 CA 0 CODE 0
+166 CA 0 CODE 0
+167 CE 0 CODE 0
+168 D9 0 CODE 0
+167 DF 0 CODE 0
+24 88 0 CODE 0
+25 88 0 CODE 0
+28 8F 0 CODE 0
+29 94 0 CODE 0
+32 96 0 CODE 0
+34 9A 0 CODE 0
+35 9C 0 CODE 0
+36 A0 0 CODE 0
+37 A1 0 CODE 0
+39 A6 0 CODE 0
+42 A8 0 CODE 0
+43 AF 0 CODE 0
+44 B2 0 CODE 0
+45 B9 0 CODE 0
+47 BC 0 CODE 0
+51 BE 0 CODE 0
+52 BF 0 CODE 0
 24 4 0 CODE 0
-157 CA 0 CODE 0
-158 CA 0 CODE 0
-159 CE 0 CODE 0
-160 D9 0 CODE 0
-159 DF 0 CODE 0
+165 E0 0 CODE 0
+166 E0 0 CODE 0
+167 E4 0 CODE 0
+168 EF 0 CODE 0
+167 F5 0 CODE 0

@@ -15,7 +15,7 @@ extern "C" {
 
 #define DEBUG_PIN   PORTAbits.RA0       // debug LED output
 
-#define SET_PIN     PORTCbits.RC2       // (re)set the logic clock after shift registers are filled
+#define SET_PIN     PORTCbits.RC1       // (re)set the logic clock after shift registers are filled
 #define CLK_PIN     PORTCbits.RC3       // shift register clock output
 #define TX_PIN      PORTCbits.RC5       // shift register data output
 

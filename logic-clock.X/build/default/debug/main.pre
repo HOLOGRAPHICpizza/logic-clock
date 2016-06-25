@@ -1312,15 +1312,42 @@ extern __bit __timeout;
 #pragma config WRT = OFF
 #pragma config CP = OFF
 
-# 23 "main.h"
+# 25 "main.h"
 void countDelay(int n);
 
 # 20 "main.c"
 int scratch = 0;
 int heartbeat = 0;
+int currentByte = 0;
 
 void interrupt isr(void) {
-scratch++;
+scratch = RCREG;
+
+
+if(scratch == 0xCC) {
+currentByte = 1;
+}
+else {
+if(currentByte == 1) {
+
+SSPBUF = scratch;
+currentByte = 2;
+}
+else if(currentByte == 2) {
+
+SSPBUF = scratch;
+
+
+countDelay(128);
+PORTCbits.RC2 = 1;
+countDelay(128);
+PORTCbits.RC2 = 0;
+
+currentByte = 0;
+}
+}
+
+PIR1bits.RCIF = 0;
 }
 
 void main(void) {
@@ -1351,7 +1378,7 @@ TRISA = 0;
 TRISB = 0;
 TRISC = 0;
 
-# 59
+# 86
 TRISCbits.TRISC7 = 1;
 
 
@@ -1401,7 +1428,7 @@ INTCONbits.GIE = 1;
 
 while(1) {
 
-# 120
+# 147
 heartbeat++;
 if(heartbeat == 200) {
 PORTAbits.RA0 = ~PORTAbits.RA0;
