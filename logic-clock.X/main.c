@@ -128,7 +128,7 @@ void main(void) {
     
     // Enable PWM output
     PR2 = 0xFF;                                     // PWM period
-    CCPR1L = 226;                                   // duty cycle MSB ~90%
+    CCPR1L = 204;                                   // duty cycle MSB ~80%
     CCP1CONbits.CCP1X = CCP1CONbits.CCP1Y = 0;      // duty cycle LSB
     T2CON = 0;                                      // configure timer
     T2CONbits.T2CKPS1 = 0;                          // prescaler 8

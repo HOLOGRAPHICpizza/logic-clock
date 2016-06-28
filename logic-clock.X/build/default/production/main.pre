@@ -1424,7 +1424,7 @@ INTCONbits.RBIE = 0;
 
 
 PR2 = 0xFF;
-CCPR1L = 226;
+CCPR1L = 204;
 CCP1CONbits.CCP1X = CCP1CONbits.CCP1Y = 0;
 T2CON = 0;
 T2CONbits.T2CKPS1 = 0;
@@ -1438,7 +1438,6 @@ INTCONbits.GIE = 1;
 
 while(1) {
 
-# 157
 heartbeat++;
 if(heartbeat == 200) {
 PORTAbits.RA0 = ~PORTAbits.RA0;

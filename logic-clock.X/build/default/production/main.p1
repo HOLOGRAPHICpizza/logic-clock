@@ -1367,9 +1367,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 130: PR2 = 0xFF;
 "130
 [e = _PR2 -> -> 255 `i `uc ]
-[; ;main.c: 131: CCPR1L = 226;
+[; ;main.c: 131: CCPR1L = 204;
 "131
-[e = _CCPR1L -> -> 226 `i `uc ]
+[e = _CCPR1L -> -> 204 `i `uc ]
 [; ;main.c: 132: CCP1CONbits.CCP1X = CCP1CONbits.CCP1Y = 0;
 "132
 [e = . . _CCP1CONbits 0 2 = . . _CCP1CONbits 0 1 -> -> 0 `i `uc ]
@@ -1395,64 +1395,64 @@ Version 3.2 HI-TECH Software Intermediate Code
 "143
 [e :U 96 ]
 {
-[; ;main.c: 157: heartbeat++;
-"157
+[; ;main.c: 145: heartbeat++;
+"145
 [e ++ _heartbeat -> 1 `i ]
-[; ;main.c: 158: if(heartbeat == 200) {
-"158
+[; ;main.c: 146: if(heartbeat == 200) {
+"146
 [e $ ! == _heartbeat -> 200 `i 98  ]
 {
-[; ;main.c: 159: PORTAbits.RA0 = ~PORTAbits.RA0;
-"159
+[; ;main.c: 147: PORTAbits.RA0 = ~PORTAbits.RA0;
+"147
 [e = . . _PORTAbits 0 0 -> ~ -> . . _PORTAbits 0 0 `i `uc ]
-[; ;main.c: 160: heartbeat = 0;
-"160
+[; ;main.c: 148: heartbeat = 0;
+"148
 [e = _heartbeat -> 0 `i ]
-"161
+"149
 }
 [e :U 98 ]
-[; ;main.c: 161: }
-[; ;main.c: 163: countDelay(128);
-"163
+[; ;main.c: 149: }
+[; ;main.c: 151: countDelay(128);
+"151
 [e ( _countDelay (1 -> 128 `i ]
-"164
+"152
 }
 [e :U 95 ]
 "143
 [e $U 96  ]
 [e :U 97 ]
-[; ;main.c: 164: }
-[; ;main.c: 165: }
-"165
+[; ;main.c: 152: }
+[; ;main.c: 153: }
+"153
 [e :UE 94 ]
 }
-"167
+"155
 [v _countDelay `(v ~T0 @X0 1 ef1`i ]
 {
-[; ;main.c: 167: void countDelay(int n) {
+[; ;main.c: 155: void countDelay(int n) {
 [e :U _countDelay ]
 [v _n `i ~T0 @X0 1 r1 ]
 [f ]
-"168
+"156
 [v _x `i ~T0 @X0 1 a ]
-[; ;main.c: 168: int x = 0;
+[; ;main.c: 156: int x = 0;
 [e = _x -> 0 `i ]
-[; ;main.c: 169: while(n--) {
-"169
+[; ;main.c: 157: while(n--) {
+"157
 [e $U 100  ]
 [e :U 101 ]
 {
-[; ;main.c: 170: x++;
-"170
+[; ;main.c: 158: x++;
+"158
 [e ++ _x -> 1 `i ]
-"171
+"159
 }
 [e :U 100 ]
-"169
+"157
 [e $ != -- _n -> 1 `i -> 0 `i 101  ]
 [e :U 102 ]
-[; ;main.c: 171: }
-[; ;main.c: 172: }
-"172
+[; ;main.c: 159: }
+[; ;main.c: 160: }
+"160
 [e :UE 99 ]
 }

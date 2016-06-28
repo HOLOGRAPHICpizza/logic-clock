@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.36 build -262312587 
-                                                                                               Sat Jun 25 02:07:42 2016
+                                                                                               Tue Jun 28 18:02:24 2016
 
 Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150325
      1                           	processor	16F873A
@@ -349,8 +349,8 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    343  0050  1303               	bcf	3,6	;RP1=0, select bank1
    344  0051  0092               	movwf	18	;volatile
    345                           
-   346                           ;main.c: 131: CCPR1L = 226;
-   347  0052  30E2               	movlw	226
+   346                           ;main.c: 131: CCPR1L = 204;
+   347  0052  30CC               	movlw	204
    348  0053  1283               	bcf	3,5	;RP0=0, select bank0
    349  0054  1303               	bcf	3,6	;RP1=0, select bank0
    350  0055  0095               	movwf	21	;volatile
@@ -391,7 +391,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    385                           ;main.c: 143: while(1) {
    386                           
    387                           
-   388                           ;main.c: 157: heartbeat++;
+   388                           ;main.c: 145: heartbeat++;
    389  0067  3001               	movlw	1
    390  0068  1283               	bcf	3,5	;RP0=0, select bank0
    391  0069  1303               	bcf	3,6	;RP1=0, select bank0
@@ -401,14 +401,14 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    395  006D  3000               	movlw	0
    396  006E  07B1               	addwf	_heartbeat+1,f
    397                           
-   398                           ;main.c: 158: if(heartbeat == 200) {
+   398                           ;main.c: 146: if(heartbeat == 200) {
    399  006F  30C8               	movlw	200
    400  0070  0630               	xorwf	_heartbeat,w
    401  0071  0431               	iorwf	_heartbeat+1,w
    402  0072  1D03               	btfss	3,2
    403  0073  2882               	goto	l819
    404                           
-   405                           ;main.c: 159: PORTAbits.RA0 = ~PORTAbits.RA0;
+   405                           ;main.c: 147: PORTAbits.RA0 = ~PORTAbits.RA0;
    406  0074  1003               	clrc
    407  0075  1C05               	btfss	5,0	;volatile
    408  0076  1403               	setc
@@ -424,13 +424,13 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    418  007F  1005               	bcf	5,0	;volatile
    419  0080                     l817:	
    420                           
-   421                           ;main.c: 160: heartbeat = 0;
+   421                           ;main.c: 148: heartbeat = 0;
    422  0080  01B0               	clrf	_heartbeat
    423  0081  01B1               	clrf	_heartbeat+1
    424  0082                     l819:	
    425                           
-   426                           ;main.c: 161: }
-   427                           ;main.c: 163: countDelay(128);
+   426                           ;main.c: 149: }
+   427                           ;main.c: 151: countDelay(128);
    428  0082  3080               	movlw	128
    429  0083  00AA               	movwf	countDelay@n
    430  0084  3000               	movlw	0
@@ -443,7 +443,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    437  00CC                     __ptext1:	
    438 ;; *************** function _countDelay *****************
    439 ;; Defined at:
-   440 ;;		line 167 in file "main.c"
+   440 ;;		line 155 in file "main.c"
    441 ;; Parameters:    Size  Location     Type
    442 ;;  n               2   10[BANK0 ] int 
    443 ;; Auto vars:     Size  Location     Type
@@ -475,7 +475,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    469                           ;psect for function _countDelay
    470  00CC                     _countDelay:	
    471                           
-   472                           ;main.c: 168: int x = 0;
+   472                           ;main.c: 156: int x = 0;
    473                           
    474                           ;incstack = 0
    475                           ; Regs used in _countDelay: [wreg+status,2+status,0]
@@ -484,7 +484,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    478  00CE  01AC               	clrf	countDelay@x
    479  00CF  01AD               	clrf	countDelay@x+1
    480  00D0                     l689:	
-   481                           ;main.c: 169: while(n--) {
+   481                           ;main.c: 157: while(n--) {
    482                           
    483  00D0  30FF               	movlw	255
    484  00D1  07AA               	addwf	countDelay@n,f
@@ -498,7 +498,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    492  00D9  1903               	btfsc	3,2
    493  00DA  0008               	return
    494                           
-   495                           ;main.c: 170: x++;
+   495                           ;main.c: 158: x++;
    496  00DB  3001               	movlw	1
    497  00DC  07AC               	addwf	countDelay@x,f
    498  00DD  1803               	skipnc
@@ -670,7 +670,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    664  00E2                     __ptext3:	
    665 ;; *************** function i1_countDelay *****************
    666 ;; Defined at:
-   667 ;;		line 167 in file "main.c"
+   667 ;;		line 155 in file "main.c"
    668 ;; Parameters:    Size  Location     Type
    669 ;;  n               2    0[BANK0 ] int 
    670 ;; Auto vars:     Size  Location     Type
@@ -701,7 +701,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    695                           ;psect for function i1_countDelay
    696  00E2                     i1_countDelay:	
    697                           
-   698                           ;main.c: 168: int x = 0;
+   698                           ;main.c: 156: int x = 0;
    699                           
    700                           ;incstack = 0
    701                           ; Regs used in i1_countDelay: [wreg+status,2+status,0]
@@ -710,7 +710,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    704  00E4  01A2               	clrf	i1countDelay@x
    705  00E5  01A3               	clrf	i1countDelay@x+1
    706  00E6                     i1l695:	
-   707                           ;main.c: 169: while(n--) {
+   707                           ;main.c: 157: while(n--) {
    708                           
    709  00E6  30FF               	movlw	255
    710  00E7  07A0               	addwf	i1countDelay@n,f
@@ -724,7 +724,7 @@ Microchip Technology Omniscient Code Generator v1.36 (Free mode) build 201601150
    718  00EF  1903               	btfsc	3,2
    719  00F0  0008               	return
    720                           
-   721                           ;main.c: 170: x++;
+   721                           ;main.c: 158: x++;
    722  00F1  3001               	movlw	1
    723  00F2  07A2               	addwf	i1countDelay@x,f
    724  00F3  1803               	skipnc
@@ -855,7 +855,7 @@ DATA                 0      0      14       8        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.36 build -262312587 
-Symbol Table                                                                                   Sat Jun 25 02:07:42 2016
+Symbol Table                                                                                   Tue Jun 28 18:02:24 2016
 
             __CFG_CP$OFF 0000              _SSPSTATbits 0094                      l811 0066  
                     l813 0067                      l817 0080                      l819 0082  
