@@ -2,4 +2,6 @@ schematic/*-cache.lib
 schematic/*.bak
 schematic/*-bak
 a.out
+logic-clock.X/dist
+logic-clock.X/build
 

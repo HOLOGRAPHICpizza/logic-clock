@@ -43,6 +43,10 @@ void interrupt isr(void) {
             SET_PIN = 1;
             countDelay(128);
             SET_PIN = 0;
+            countDelay(128);
+            
+            // TX zeros to shift registers
+            SSPBUF = 0;
             
             currentByte = 0;
         }
@@ -135,6 +139,9 @@ void main(void) {
     T2CONbits.T2CKPS0 = 1;
     T2CONbits.TMR2ON = 1;
     CCP1CONbits.CCP1M3 = CCP1CONbits.CCP1M2 = 1;    // PWM mode
+    
+    // TX zeros to shift registers
+    SSPBUF = 0;
     
     // Enable Interrupts
     INTCONbits.GIE = 1;
