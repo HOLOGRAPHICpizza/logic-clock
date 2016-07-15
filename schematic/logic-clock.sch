@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 4
+Sheet 1 5
 Title "4000 SERIES LOGIC CLOCK w/ ALARM & RS-232 SET"
-Date "20 jun 2016"
+Date "15 jul 2016"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
@@ -508,4 +508,10 @@ $EndComp
 Wire Wire Line
 	6300 6050 6350 6050
 NoConn ~ 6850 6050
+$Sheet
+S 5250 2500 3350 1750
+U 577F24F6
+F0 "logic-board" 50
+F1 "logic-board.sch" 50
+$EndSheet
 $EndSCHEMATC
