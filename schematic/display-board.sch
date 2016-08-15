@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 4 5
 Title "LOGIC CLOCK DISPLAY BOARD"
-Date "15 jul 2016"
+Date "15 aug 2016"
 Rev "3"
 Comp "Michael Craft"
 Comment1 ""
