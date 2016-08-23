@@ -1137,7 +1137,7 @@ L USR R?
 U 1 1 57897CFB
 P 5100 6450
 F 0 "R?" V 5180 6450 40  0000 C CNN
-F 1 "100K" V 5000 6450 40  0000 C CNN
+F 1 "47K" V 5000 6450 40  0000 C CNN
 F 2 "~" V 5030 6450 30  0000 C CNN
 F 3 "~" H 5100 6450 30  0000 C CNN
 	1    5100 6450
@@ -1153,17 +1153,6 @@ F 2 "" H 4850 6450 60  0000 C CNN
 F 3 "" H 4850 6450 60  0000 C CNN
 	1    4850 6450
 	0    -1   -1   0   
-$EndComp
-$Comp
-L USR R?
-U 1 1 57897EE5
-P 5350 5050
-F 0 "R?" V 5430 5050 40  0000 C CNN
-F 1 "10K" V 5250 5050 40  0000 C CNN
-F 2 "~" V 5280 5050 30  0000 C CNN
-F 3 "~" H 5350 5050 30  0000 C CNN
-	1    5350 5050
-	-1   0    0    1   
 $EndComp
 $Comp
 L USR R?
@@ -1829,13 +1818,10 @@ Wire Wire Line
 Connection ~ 5750 6700
 Connection ~ 4850 6450
 Wire Wire Line
-	5350 4800 6700 4800
+	5100 4800 6700 4800
 Wire Wire Line
 	6700 4800 6700 5000
 Connection ~ 5350 6450
-Wire Wire Line
-	5350 5300 5350 6700
-Connection ~ 5350 5300
 Connection ~ 4900 8200
 Connection ~ 4400 8200
 Connection ~ 5350 5400
@@ -1863,10 +1849,6 @@ Wire Wire Line
 	2100 5600 2850 5600
 Connection ~ 2300 5600
 Connection ~ 2300 5100
-Wire Wire Line
-	5100 4450 5100 5300
-Wire Wire Line
-	5100 5300 5350 5300
 Wire Wire Line
 	4900 4450 4350 4450
 Wire Wire Line
@@ -2191,4 +2173,9 @@ Wire Wire Line
 	14200 5050 14200 5400
 Wire Wire Line
 	12600 5050 12600 5400
+Wire Wire Line
+	5100 4450 5100 4800
+Connection ~ 5350 4800
+Wire Wire Line
+	5350 4800 5350 6700
 $EndSCHEMATC
