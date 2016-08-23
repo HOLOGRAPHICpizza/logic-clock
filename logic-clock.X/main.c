@@ -46,8 +46,8 @@ void interrupt isr(void) {
             countDelay(128);
             
             // TX zeros to shift registers
-            SSPBUF = 0;
-            SSPBUF = 0;
+            //SSPBUF = 0;
+            //SSPBUF = 0;
             
             currentByte = 0;
         }
@@ -142,8 +142,8 @@ void main(void) {
     CCP1CONbits.CCP1M3 = CCP1CONbits.CCP1M2 = 1;    // PWM mode
     
     // TX zeros to shift registers
-    SSPBUF = 0;
-    SSPBUF = 0;
+    //SSPBUF = 0;
+    //SSPBUF = 0;
     
     // Enable Interrupts
     INTCONbits.GIE = 1;

@@ -37,7 +37,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 5 5
 Title "LOGIC CLOCK LOGIC BOARD"
-Date "15 aug 2016"
+Date "23 aug 2016"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
@@ -432,50 +432,6 @@ F 1 "GND" H 13150 5130 30  0001 C CNN
 F 2 "" H 13150 5200 60  0000 C CNN
 F 3 "" H 13150 5200 60  0000 C CNN
 	1    13150 5200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L DIODE D?
-U 1 1 57893821
-P 14250 5000
-F 0 "D?" H 14250 5100 40  0000 C CNN
-F 1 "DIODE" H 14250 4900 40  0001 C CNN
-F 2 "~" H 14250 5000 60  0000 C CNN
-F 3 "~" H 14250 5000 60  0000 C CNN
-	1    14250 5000
-	0    1    1    0   
-$EndComp
-$Comp
-L DIODE D?
-U 1 1 57893827
-P 14150 5000
-F 0 "D?" H 14150 5100 40  0000 C CNN
-F 1 "DIODE" H 14150 4900 40  0001 C CNN
-F 2 "~" H 14150 5000 60  0000 C CNN
-F 3 "~" H 14150 5000 60  0000 C CNN
-	1    14150 5000
-	0    1    1    0   
-$EndComp
-$Comp
-L USR R?
-U 1 1 5789382D
-P 14500 5200
-F 0 "R?" V 14580 5200 40  0000 C CNN
-F 1 "100K" V 14400 5200 40  0000 C CNN
-F 2 "~" V 14430 5200 30  0000 C CNN
-F 3 "~" H 14500 5200 30  0000 C CNN
-	1    14500 5200
-	0    1    1    0   
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 57893834
-P 14750 5200
-F 0 "#PWR?" H 14750 5200 30  0001 C CNN
-F 1 "GND" H 14750 5130 30  0001 C CNN
-F 2 "" H 14750 5200 60  0000 C CNN
-F 3 "" H 14750 5200 60  0000 C CNN
-	1    14750 5200
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -1510,7 +1466,7 @@ Text GLabel 11600 4900 1    60   Input ~ 0
 SET
 Text GLabel 12550 4500 1    60   Input ~ 0
 SET
-Text GLabel 14150 4500 1    60   Input ~ 0
+Text GLabel 14200 5050 1    60   Input ~ 0
 SET
 NoConn ~ 9550 1450
 NoConn ~ 11500 1450
@@ -1680,13 +1636,6 @@ Wire Wire Line
 Wire Wire Line
 	12600 5200 12600 5400
 Connection ~ 12600 5200
-Connection ~ 14250 5200
-Connection ~ 14750 5200
-Wire Wire Line
-	14150 5200 14250 5200
-Wire Wire Line
-	14200 5200 14200 5400
-Connection ~ 14200 5200
 Connection ~ 11700 5400
 Connection ~ 12200 5400
 Wire Wire Line
@@ -1700,9 +1649,6 @@ Wire Wire Line
 	12500 4700 15050 4700
 Wire Wire Line
 	12500 4700 12500 5400
-Wire Wire Line
-	14250 4800 14250 4700
-Connection ~ 14250 4700
 Wire Wire Line
 	13450 4600 13450 6600
 Wire Wire Line
@@ -2062,8 +2008,6 @@ Wire Wire Line
 Wire Wire Line
 	12550 4500 12550 4800
 Wire Wire Line
-	14150 4500 14150 4800
-Wire Wire Line
 	9550 1550 9750 1550
 Wire Wire Line
 	9750 1550 9750 1450
@@ -2299,4 +2243,6 @@ Wire Wire Line
 Connection ~ 13600 8450
 Text Notes 4000 9750 0    60   ~ 0
 0121234567890121234...
+Wire Wire Line
+	14200 5050 14200 5400
 $EndSCHEMATC
