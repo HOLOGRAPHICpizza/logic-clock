@@ -392,50 +392,6 @@ F 3 "" H 11300 5400 60  0000 C CNN
 $EndComp
 $Comp
 L DIODE D?
-U 1 1 578936D7
-P 12650 5000
-F 0 "D?" H 12650 5100 40  0000 C CNN
-F 1 "DIODE" H 12650 4900 40  0001 C CNN
-F 2 "~" H 12650 5000 60  0000 C CNN
-F 3 "~" H 12650 5000 60  0000 C CNN
-	1    12650 5000
-	0    1    1    0   
-$EndComp
-$Comp
-L DIODE D?
-U 1 1 578936DD
-P 12550 5000
-F 0 "D?" H 12550 5100 40  0000 C CNN
-F 1 "DIODE" H 12550 4900 40  0001 C CNN
-F 2 "~" H 12550 5000 60  0000 C CNN
-F 3 "~" H 12550 5000 60  0000 C CNN
-	1    12550 5000
-	0    1    1    0   
-$EndComp
-$Comp
-L USR R?
-U 1 1 5789377D
-P 12900 5200
-F 0 "R?" V 12980 5200 40  0000 C CNN
-F 1 "100K" V 12800 5200 40  0000 C CNN
-F 2 "~" V 12830 5200 30  0000 C CNN
-F 3 "~" H 12900 5200 30  0000 C CNN
-	1    12900 5200
-	0    1    1    0   
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 57893785
-P 13150 5200
-F 0 "#PWR?" H 13150 5200 30  0001 C CNN
-F 1 "GND" H 13150 5130 30  0001 C CNN
-F 2 "" H 13150 5200 60  0000 C CNN
-F 3 "" H 13150 5200 60  0000 C CNN
-	1    13150 5200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L DIODE D?
 U 1 1 5789383E
 P 11700 5200
 F 0 "D?" H 11700 5300 40  0000 C CNN
@@ -1464,7 +1420,7 @@ Text GLabel 10250 5300 1    60   Input ~ 0
 SET
 Text GLabel 11600 4900 1    60   Input ~ 0
 SET
-Text GLabel 12550 4500 1    60   Input ~ 0
+Text GLabel 12600 5050 1    60   Input ~ 0
 SET
 Text GLabel 14200 5050 1    60   Input ~ 0
 SET
@@ -1629,13 +1585,6 @@ Wire Wire Line
 Wire Wire Line
 	10650 4600 10650 5400
 Connection ~ 11300 5400
-Connection ~ 12650 5200
-Connection ~ 13150 5200
-Wire Wire Line
-	12550 5200 12650 5200
-Wire Wire Line
-	12600 5200 12600 5400
-Connection ~ 12600 5200
 Connection ~ 11700 5400
 Connection ~ 12200 5400
 Wire Wire Line
@@ -1654,9 +1603,6 @@ Wire Wire Line
 Wire Wire Line
 	10650 4600 13450 4600
 Connection ~ 13450 5200
-Wire Wire Line
-	12650 4600 12650 4800
-Connection ~ 12650 4600
 Connection ~ 11200 6600
 Connection ~ 11300 6600
 Wire Notes Line
@@ -2006,8 +1952,6 @@ Wire Wire Line
 Wire Wire Line
 	11600 4900 11600 5000
 Wire Wire Line
-	12550 4500 12550 4800
-Wire Wire Line
 	9550 1550 9750 1550
 Wire Wire Line
 	9750 1550 9750 1450
@@ -2245,4 +2189,6 @@ Text Notes 4000 9750 0    60   ~ 0
 0121234567890121234...
 Wire Wire Line
 	14200 5050 14200 5400
+Wire Wire Line
+	12600 5050 12600 5400
 $EndSCHEMATC
