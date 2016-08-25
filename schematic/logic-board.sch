@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 5 5
+Sheet 3 6
 Title "LOGIC CLOCK LOGIC BOARD"
-Date "23 aug 2016"
+Date "25 aug 2016"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
