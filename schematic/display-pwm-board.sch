@@ -33,11 +33,11 @@ LIBS:kicad-custom-parts
 LIBS:logic-clock-cache
 EELAYER 27 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr USLetter 11000 8500
 encoding utf-8
-Sheet 6 6
-Title "DISPLAY PWM SIGNAL GENERATOR"
-Date "25 aug 2016"
+Sheet 4 8
+Title "LOGIC CLOCK DISPLAY PWM SIGNAL GENERATOR"
+Date "28 aug 2016"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
@@ -61,7 +61,7 @@ L USR R?
 U 1 1 57C383A7
 P 3700 3250
 F 0 "R?" V 3780 3250 40  0000 C CNN
-F 1 "18K" V 3600 3250 40  0000 C CNN
+F 1 "1K8" V 3600 3250 40  0000 C CNN
 F 2 "~" V 3630 3250 30  0000 C CNN
 F 3 "~" H 3700 3250 30  0000 C CNN
 	1    3700 3250
@@ -239,7 +239,7 @@ F 3 "" H 8050 2200 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 Text HLabel 8100 2600 2    60   Output ~ 0
-+5V
++5V_OUT
 $Comp
 L +5V #PWR?
 U 1 1 57C3A8D9
