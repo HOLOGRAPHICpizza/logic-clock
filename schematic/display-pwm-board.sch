@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 4 8
 Title "LOGIC CLOCK DISPLAY PWM SIGNAL GENERATOR"
-Date "28 aug 2016"
+Date "29 aug 2016"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
@@ -301,4 +301,40 @@ Wire Notes Line
 	9050 2500 8100 2500
 Wire Notes Line
 	8100 2500 8100 2800
+$Comp
+L LED D?
+U 1 1 57C38BBE
+P 7450 2200
+F 0 "D?" H 7450 2300 50  0000 C CNN
+F 1 "LED" H 7450 2100 50  0000 C CNN
+F 2 "~" H 7450 2200 60  0000 C CNN
+F 3 "~" H 7450 2200 60  0000 C CNN
+	1    7450 2200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L USR R?
+U 1 1 57C38BF4
+P 7450 2650
+F 0 "R?" V 7530 2650 40  0000 C CNN
+F 1 "1K" V 7350 2650 40  0000 C CNN
+F 2 "~" V 7380 2650 30  0000 C CNN
+F 3 "~" H 7450 2650 30  0000 C CNN
+	1    7450 2650
+	1    0    0    -1  
+$EndComp
+Connection ~ 7450 2900
+Connection ~ 7450 2400
+$Comp
+L USGND #PWR?
+U 1 1 57C38C13
+P 7450 2000
+F 0 "#PWR?" H 7450 2000 30  0001 C CNN
+F 1 "USGND" H 7450 1930 30  0001 C CNN
+F 2 "~" H 7450 2000 60  0000 C CNN
+F 3 "~" H 7450 2000 60  0000 C CNN
+	1    7450 2000
+	-1   0    0    1   
+$EndComp
+Connection ~ 7450 2000
 $EndSCHEMATC

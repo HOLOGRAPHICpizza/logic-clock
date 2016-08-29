@@ -35,9 +35,9 @@ EELAYER 27 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 8
+Sheet 6 8
 Title "60Hz LOW VOLTAGE AC TO DC SUPPLY W/ 10Hz OUT"
-Date "28 aug 2016"
+Date "29 aug 2016"
 Rev "2"
 Comp ""
 Comment1 ""
