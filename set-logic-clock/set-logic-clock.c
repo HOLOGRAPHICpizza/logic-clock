@@ -88,10 +88,9 @@ int main() {
 
 	//write (fd, "hello!\n", 7);           // send 7 character greetin
 	char buffer[4];
-	buffer[0] = 0x54;
-	buffer[1] = 0x00;
-	buffer[2] = 0x00;
-	buffer[3] = 0xFF;
+	buffer[0] = SECRET_WORD;
+	buffer[1] = 0x55;
+	buffer[2] = 0x55;
 	printf("write buffer");
 	write(fd, buffer, 4);
 	
