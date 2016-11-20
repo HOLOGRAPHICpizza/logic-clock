@@ -1559,11 +1559,7 @@ Wire Wire Line
 Connection ~ 11450 6950
 Connection ~ 11950 6950
 Wire Wire Line
-	12300 5550 11750 5550
-Wire Wire Line
-	11750 5550 11750 6750
-Wire Wire Line
-	11750 6750 11450 6750
+	11450 6750 11850 6750
 Connection ~ 11450 6900
 Connection ~ 9900 5400
 Connection ~ 9800 6600
@@ -1721,10 +1717,6 @@ Wire Wire Line
 	5200 6750 5200 7250
 Connection ~ 5750 6700
 Connection ~ 4850 6450
-Wire Wire Line
-	5100 4800 6700 4800
-Wire Wire Line
-	6700 4800 6700 5000
 Connection ~ 5350 6450
 Connection ~ 4900 8200
 Connection ~ 4400 8200
@@ -2059,7 +2051,6 @@ Wire Wire Line
 	12600 5050 12600 5400
 Wire Wire Line
 	5100 4450 5100 4800
-Connection ~ 5350 4800
 Wire Wire Line
 	5350 4800 5350 6700
 Text HLabel 15350 4150 2    60   Output ~ 0
@@ -2251,4 +2242,37 @@ Wire Wire Line
 	8550 5550 8550 5800
 Wire Wire Line
 	8550 6750 8550 6300
+Wire Wire Line
+	5100 4800 6200 4800
+$Comp
+L USR R?
+U 1 1 5831FE53
+P 6450 4800
+F 0 "R?" V 6530 4800 40  0000 C CNN
+F 1 "10K" V 6350 4800 40  0000 C CNN
+F 2 "~" V 6380 4800 30  0000 C CNN
+F 3 "~" H 6450 4800 30  0000 C CNN
+	1    6450 4800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6700 4800 6700 5000
+Connection ~ 5350 4800
+$Comp
+L USR R?
+U 1 1 5832017A
+P 11850 6000
+F 0 "R?" V 11930 6000 40  0000 C CNN
+F 1 "10K" V 11750 6000 40  0000 C CNN
+F 2 "~" V 11780 6000 30  0000 C CNN
+F 3 "~" H 11850 6000 30  0000 C CNN
+	1    11850 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12300 5550 11850 5550
+Wire Wire Line
+	11850 5550 11850 5750
+Wire Wire Line
+	11850 6750 11850 6250
 $EndSCHEMATC

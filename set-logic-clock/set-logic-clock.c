@@ -86,8 +86,8 @@ int main() {
 //	printf("set blocking");
 	set_blocking (fd, 0);                // set no blocking
 
-	int mins = 7;
-	int tenmins = 5;
+	int mins = 2;
+	int tenmins = 4;
 	int hours = 2;
 	int tenhours = 0;
 	int am = 0;
