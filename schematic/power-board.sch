@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 6 8
 Title "60Hz LOW VOLTAGE AC TO DC SUPPLY W/ 10Hz OUT"
-Date "2 sep 2016"
+Date "20 nov 2016"
 Rev "2"
 Comp ""
 Comment1 ""

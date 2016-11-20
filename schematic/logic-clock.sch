@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 8
 Title "4000 SERIES LOGIC CLOCK w/ ALARM & RS-232 SET"
-Date "2 sep 2016"
+Date "20 nov 2016"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""

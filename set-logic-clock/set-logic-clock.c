@@ -68,31 +68,52 @@ void set_blocking (int fd, int should_block) {
 }
 
 int main() {
-	printf("running\n");
+//	printf("running\n");
 	
 	char *portname = "/dev/ttyS1";
 	
-	printf("opening port\n");
+//	printf("opening port\n");
 	
 	int fd = open (portname, O_WRONLY | O_NOCTTY | O_SYNC);
-	printf("port open\n");
+//	printf("port open\n");
 	if (fd < 0)
 	{
 		printf("error %d opening %s: %s", errno, portname, strerror (errno));
 		return -1;
 	}
-	printf("set attribs");
+//	printf("set attribs");
 	set_interface_attribs (fd, B9600, 0);  // set speed to 115,200 bps, 8n1 (no parity)
-	printf("set blocking");
+//	printf("set blocking");
 	set_blocking (fd, 0);                // set no blocking
 
-	//write (fd, "hello!\n", 7);           // send 7 character greetin
-	char buffer[4];
+	int mins = 7;
+	int tenmins = 5;
+	int hours = 2;
+	int tenhours = 0;
+	int am = 0;
+
+	int firstbyte = 0;
+	int secondbyte = (mins << 4) | tenmins;
+	if(tenhours) {
+		firstbyte = 0x02 | (hours << 4);
+	}
+	else {
+		firstbyte = 0x01 | (hours << 4);
+	}
+	if(am) {
+		firstbyte |= 0x08;
+	}
+	else {
+		firstbyte |= 0x04;
+	}
+	printf("%x %x\n", firstbyte, secondbyte);
+
+	char buffer[3];
 	buffer[0] = SECRET_WORD;
-	buffer[1] = 0x55;
-	buffer[2] = 0x55;
-	printf("write buffer");
-	write(fd, buffer, 4);
+	buffer[1] = secondbyte;
+	buffer[2] = firstbyte;
+//	printf("write buffer");
+	write(fd, buffer, 3);
 	
 	close(fd);
 	return 0;

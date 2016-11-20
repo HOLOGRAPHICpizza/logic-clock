@@ -37,7 +37,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 5 8
 Title "LOGIC CLOCK LOGIC BOARD"
-Date "2 sep 2016"
+Date "20 nov 2016"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
@@ -1619,8 +1619,6 @@ Wire Wire Line
 	7550 6600 7550 7400
 Wire Wire Line
 	7650 6600 7650 7400
-Wire Wire Line
-	9000 5550 8450 5550
 Connection ~ 7650 7100
 Connection ~ 7550 7100
 Connection ~ 7450 7100
@@ -1652,9 +1650,7 @@ Wire Wire Line
 	8150 6750 8150 7000
 Connection ~ 8650 6950
 Wire Wire Line
-	8450 5550 8450 6750
-Wire Wire Line
-	8450 6750 8150 6750
+	8150 6750 8550 6750
 Wire Wire Line
 	12300 4500 12300 5550
 Wire Wire Line
@@ -2238,4 +2234,21 @@ Connection ~ 8850 2400
 Connection ~ 8950 2400
 Connection ~ 9050 2400
 Connection ~ 9150 2400
+$Comp
+L USR R?
+U 1 1 5831F3F9
+P 8550 6050
+F 0 "R?" V 8630 6050 40  0000 C CNN
+F 1 "10K" V 8450 6050 40  0000 C CNN
+F 2 "~" V 8480 6050 30  0000 C CNN
+F 3 "~" H 8550 6050 30  0000 C CNN
+	1    8550 6050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 5550 8550 5550
+Wire Wire Line
+	8550 5550 8550 5800
+Wire Wire Line
+	8550 6750 8550 6300
 $EndSCHEMATC
