@@ -89,8 +89,8 @@ int main() {
 	int mins = 2;
 	int tenmins = 3;
 	int hours = 4;
-	int tenhours = 0;
-	int am = 0;
+	int tenhours = 1;
+	int am = 1;
 
 	int firstbyte = 0;
 	int secondbyte = (mins << 4) | tenmins;

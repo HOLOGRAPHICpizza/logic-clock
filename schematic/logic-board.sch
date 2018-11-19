@@ -37,7 +37,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 5 8
 Title "LOGIC CLOCK LOGIC BOARD"
-Date "30 oct 2018"
+Date "19 nov 2018"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
@@ -785,51 +785,7 @@ F 3 "" H 6300 5400 60  0000 C CNN
 	1    6300 5400
 	-1   0    0    1   
 $EndComp
-$Comp
-L DIODE D?
-U 1 1 578978A8
-P 5550 6700
-F 0 "D?" H 5550 6800 40  0000 C CNN
-F 1 "DIODE" H 5550 6600 40  0001 C CNN
-F 2 "~" H 5550 6700 60  0000 C CNN
-F 3 "~" H 5550 6700 60  0000 C CNN
-	1    5550 6700
-	1    0    0    1   
-$EndComp
-$Comp
-L DIODE D?
-U 1 1 57897C09
-P 5150 5400
-F 0 "D?" H 5150 5500 40  0000 C CNN
-F 1 "DIODE" H 5150 5300 40  0001 C CNN
-F 2 "~" H 5150 5400 60  0000 C CNN
-F 3 "~" H 5150 5400 60  0000 C CNN
-	1    5150 5400
-	-1   0    0    1   
-$EndComp
-$Comp
-L USR R?
-U 1 1 57897CFB
-P 5100 6450
-F 0 "R?" V 5180 6450 40  0000 C CNN
-F 1 "47K" V 5000 6450 40  0000 C CNN
-F 2 "~" V 5030 6450 30  0000 C CNN
-F 3 "~" H 5100 6450 30  0000 C CNN
-	1    5100 6450
-	0    1    1    0   
-$EndComp
-$Comp
-L +5V #PWR?
-U 1 1 57897D01
-P 4850 6450
-F 0 "#PWR?" H 4850 6540 20  0001 C CNN
-F 1 "+5V" H 4850 6540 30  0000 C CNN
-F 2 "" H 4850 6450 60  0000 C CNN
-F 3 "" H 4850 6450 60  0000 C CNN
-	1    4850 6450
-	0    -1   -1   0   
-$EndComp
-Text Notes 5300 5950 1    60   ~ 0
+Text Notes 5400 6150 1    60   ~ 0
 RESET
 $Comp
 L 4013 U?
@@ -1407,13 +1363,6 @@ Connection ~ 5650 8400
 Wire Wire Line
 	5750 6600 5750 7900
 Connection ~ 6300 5400
-Connection ~ 5750 6700
-Connection ~ 4850 6450
-Connection ~ 5350 6450
-Connection ~ 5350 5400
-Wire Wire Line
-	4050 5400 4950 5400
-Connection ~ 5350 6150
 Wire Wire Line
 	4300 4850 4300 5800
 Wire Wire Line
@@ -1455,14 +1404,12 @@ Wire Wire Line
 	4200 4650 4200 1650
 Wire Wire Line
 	4200 1650 6200 1650
-Connection ~ 4400 5400
 Wire Wire Line
 	1300 7450 1300 1550
 Wire Wire Line
 	1300 1550 6300 1550
 Wire Wire Line
 	4650 5400 4650 6850
-Connection ~ 4650 5400
 Wire Wire Line
 	5000 2700 5000 2400
 Wire Notes Line
@@ -1582,8 +1529,6 @@ Wire Wire Line
 Wire Wire Line
 	5800 3250 5800 5400
 Wire Wire Line
-	5350 6150 4350 6150
-Wire Wire Line
 	4300 4850 2850 4850
 Wire Wire Line
 	2850 4850 2850 5400
@@ -1621,9 +1566,7 @@ Wire Wire Line
 Wire Wire Line
 	12600 5050 12600 5400
 Wire Wire Line
-	5100 4450 5100 4800
-Wire Wire Line
-	5350 4800 5350 6700
+	5100 4450 5100 5400
 Wire Wire Line
 	15050 4150 15050 6600
 Wire Notes Line
@@ -1731,8 +1674,6 @@ Wire Wire Line
 Wire Wire Line
 	8000 7300 8100 7300
 Connection ~ 8150 7000
-Wire Wire Line
-	5100 4800 5350 4800
 Wire Wire Line
 	5650 5350 5650 5400
 Wire Wire Line
@@ -1894,4 +1835,33 @@ Wire Wire Line
 	2250 6450 4350 6450
 Wire Wire Line
 	4350 6450 4350 6150
+$Comp
+L 4081 U?
+U 1 1 5BF34929
+P 5100 6000
+F 0 "U?" H 5100 6050 60  0000 C CNN
+F 1 "4081" H 5100 5950 60  0000 C CNN
+F 2 "" H 5100 6000 60  0000 C CNN
+F 3 "" H 5100 6000 60  0000 C CNN
+	1    5100 6000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4050 5400 4650 5400
+Connection ~ 4400 5400
+Wire Wire Line
+	4650 6600 5000 6600
+Connection ~ 4650 6600
+Wire Wire Line
+	5750 6700 5200 6700
+Wire Wire Line
+	5200 6700 5200 6600
+Connection ~ 5750 6700
+Wire Wire Line
+	4350 6150 4800 6150
+Wire Wire Line
+	4800 6150 4800 4800
+Wire Wire Line
+	4800 4800 5100 4800
+Connection ~ 5100 4800
 $EndSCHEMATC

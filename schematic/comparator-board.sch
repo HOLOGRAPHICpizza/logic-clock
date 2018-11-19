@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 7 8
 Title "LOGIC CLOCK ALARM COMPARATOR BOARD"
-Date "30 oct 2018"
+Date "19 nov 2018"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
