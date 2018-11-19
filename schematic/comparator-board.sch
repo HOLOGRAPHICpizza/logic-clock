@@ -58,10 +58,10 @@ Wire Notes Line
 Wire Notes Line
 	2900 4150 2900 3850
 $Comp
-L +5V #PWR?
+L +5V #PWR0140
 U 1 1 57C3E1E0
 P 2950 3950
-F 0 "#PWR?" H 2950 4040 20  0001 C CNN
+F 0 "#PWR0140" H 2950 4040 20  0001 C CNN
 F 1 "+5V" H 2950 4040 30  0000 C CNN
 F 2 "" H 2950 3950 60  0000 C CNN
 F 3 "" H 2950 3950 60  0000 C CNN
@@ -71,10 +71,10 @@ $EndComp
 Wire Wire Line
 	2950 3950 2900 3950
 $Comp
-L USGND #PWR?
+L USGND #PWR0141
 U 1 1 57C3E1F4
 P 2950 4050
-F 0 "#PWR?" H 2950 4050 30  0001 C CNN
+F 0 "#PWR0141" H 2950 4050 30  0001 C CNN
 F 1 "USGND" H 2950 3980 30  0001 C CNN
 F 2 "~" H 2950 4050 60  0000 C CNN
 F 3 "~" H 2950 4050 60  0000 C CNN
@@ -115,18 +115,6 @@ Text HLabel 2900 6150 0    60   Input ~ 0
 5D
 Wire Notes Line
 	2900 6250 2200 6250
-NoConn ~ 2900 4850
-NoConn ~ 2900 4950
-NoConn ~ 2900 5050
-NoConn ~ 2900 5150
-NoConn ~ 2900 5350
-NoConn ~ 2900 5450
-NoConn ~ 2900 5550
-NoConn ~ 2900 5650
-NoConn ~ 2900 5850
-NoConn ~ 2900 5950
-NoConn ~ 2900 6050
-NoConn ~ 2900 6150
 Text Notes 3050 4600 3    60   ~ 0
 leave space for the header parts i might need\n
 Text HLabel 2900 6350 0    60   Input ~ 0
@@ -138,11 +126,7 @@ Wire Notes Line
 Wire Notes Line
 	2200 6550 2200 6250
 Wire Notes Line
-	2900 4750 2900 6550
-Wire Notes Line
 	2650 4750 2650 6250
-NoConn ~ 2900 6350
-NoConn ~ 2900 6450
 Text HLabel 5400 5500 2    60   Output ~ 0
 ALARM
 Wire Notes Line
@@ -154,4 +138,6 @@ Wire Notes Line
 Wire Notes Line
 	5400 5600 5400 5400
 NoConn ~ 5400 5500
+Wire Notes Line
+	2900 4750 2900 6550
 $EndSCHEMATC
