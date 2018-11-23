@@ -1,13 +1,11 @@
-update=Mon 30 May 2016 12:56:32 AM EDT
+update=Fri 23 Nov 2018 11:54:07 AM EST
 version=1
-last_client=pcbnew
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
 [cvpcb/libraries]
 EquName1=devcms
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -86,3 +84,5 @@ LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
 LibName17=/home/michael/kicad-custom-parts
+[general]
+version=1
