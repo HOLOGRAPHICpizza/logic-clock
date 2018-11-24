@@ -3,7 +3,7 @@
   (general
     (links 242)
     (no_connects 62)
-    (area 74.7268 97.409 260.985001 168.275001)
+    (area 43.637999 69.037999 234.746001 146.354001)
     (thickness 1.6)
     (drawings 4)
     (tracks 526)
@@ -20,8 +20,8 @@
   )
 
   (layers
-    (15 F.Cu mixed)
-    (0 B.Cu mixed)
+    (15 F.Cu signal)
+    (0 B.Cu signal)
     (21 F.SilkS user)
     (23 F.Mask user)
     (28 Edge.Cuts user)

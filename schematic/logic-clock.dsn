@@ -9,13 +9,13 @@
   (unit um)
   (structure
     (layer F.Cu
-      (type mixed)
+      (type signal)
       (property
         (index 0)
       )
     )
     (layer B.Cu
-      (type mixed)
+      (type signal)
       (property
         (index 1)
       )
