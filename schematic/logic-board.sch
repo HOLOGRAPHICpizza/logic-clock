@@ -37,7 +37,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 5 8
 Title "LOGIC CLOCK LOGIC BOARD"
-Date "23 nov 2018"
+Date "24 nov 2018"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
@@ -799,10 +799,10 @@ F 3 "" H 3450 5600 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CD4013 U5
+L CD4013 U16
 U 2 1 57B138AD
 P 5100 3850
-F 0 "U5" H 5250 4150 60  0000 C CNN
+F 0 "U16" H 5250 4150 60  0000 C CNN
 F 1 "4013" H 5150 3550 60  0000 L CNN
 F 2 "" H 5100 3850 60  0000 C CNN
 F 3 "" H 5100 3850 60  0000 C CNN

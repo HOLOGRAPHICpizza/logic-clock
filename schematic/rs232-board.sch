@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 8 8
 Title "LOGIC CLOCK RS232 RECEIVER BOARD"
-Date "23 nov 2018"
+Date "24 nov 2018"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
@@ -151,10 +151,10 @@ F 3 "" H 8200 2500 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CD4013 U16
+L CD4013 U89
 U 2 1 582279E2
 P 4000 3900
-F 0 "U16" H 4150 4200 60  0000 C CNN
+F 0 "U89" H 4150 4200 60  0000 C CNN
 F 1 "4013" H 4050 3600 60  0000 L CNN
 F 2 "" H 4000 3900 60  0000 C CNN
 F 3 "" H 4000 3900 60  0000 C CNN
