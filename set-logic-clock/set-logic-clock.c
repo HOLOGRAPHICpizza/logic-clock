@@ -2,7 +2,7 @@
 
 // Thanks to wallyk -  http://stackoverflow.com/a/6947758/1475869
 
-#define SECRET_WORD	0xAA//0xCC
+#define SECRET_WORD	0xCC
 
 #include <stdio.h>
 #include <errno.h>
@@ -110,8 +110,8 @@ int main() {
 
 	char buffer[3];
 	buffer[0] = 0x01;//SECRET_WORD;
-	buffer[1] = 0xAA;//secondbyte;
-	buffer[2] = 0x03;//firstbyte;
+	buffer[1] = 0x02;//secondbyte;
+	buffer[2] = SECRET_WORD;
 //	printf("write buffer");
 	write(fd, buffer, 3);
 	
