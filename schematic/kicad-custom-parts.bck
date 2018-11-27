@@ -1,0 +1,14 @@
+EESchema-DOCLIB  Version 2.0  Date: Tue 27 Nov 2018 06:26:08 PM EST
+#
+$CMP CD4013
+D Dual D  FlipFlop, Set & reset
+K CMOS DFF
+F http://www.onsemi.com/pub/Collateral/MC14013B-D.PDF
+$ENDCMP
+#
+$CMP MOMENTARY_NO
+D Push Button
+K Switch
+$ENDCMP
+#
+#End Doc Library
