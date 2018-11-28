@@ -407,9 +407,7 @@ Wire Notes Line
 Connection ~ 9500 1300
 Connection ~ 9500 1400
 Wire Wire Line
-	2650 4500 2700 4500
-Wire Wire Line
-	2700 4500 2750 4500
+	2650 4500 2750 4500
 Wire Wire Line
 	3250 4500 3800 4500
 Wire Wire Line
@@ -421,13 +419,9 @@ Connection ~ 3200 5050
 Connection ~ 5650 5100
 Connection ~ 5800 4300
 Wire Wire Line
-	5000 4650 5300 4650
+	5000 4650 5650 4650
 Wire Wire Line
-	5300 4650 5650 4650
-Wire Wire Line
-	5300 4300 5300 4650
-Wire Wire Line
-	5300 4650 5300 4700
+	5300 4300 5300 4700
 Wire Wire Line
 	5650 4650 5650 4700
 Connection ~ 5300 5100
@@ -441,9 +435,7 @@ Wire Wire Line
 	6900 4650 6550 4650
 Connection ~ 6900 4750
 Wire Wire Line
-	3800 5900 6900 5900
-Wire Wire Line
-	6900 5900 8400 5900
+	3800 5900 8400 5900
 Wire Wire Line
 	3800 5900 3800 5600
 Connection ~ 6300 4300
@@ -470,9 +462,7 @@ Wire Wire Line
 Wire Wire Line
 	8200 5550 8400 5550
 Wire Wire Line
-	6900 4950 6900 5900
-Wire Wire Line
-	6900 5900 6900 7050
+	6900 4950 6900 7050
 Connection ~ 6900 5900
 $Comp
 L 4013 U89
@@ -486,9 +476,7 @@ F 3 "" H 8600 6500 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8600 4200 8600 5450
-Wire Wire Line
-	8600 5450 8600 5950
+	8600 4200 8600 5950
 $Comp
 L USGND #PWR0170
 U 1 1 58252520
@@ -625,9 +613,7 @@ F 3 "~" H 10200 4750 30  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10000 5000 10200 5000
-Wire Wire Line
-	10200 5000 10250 5000
+	10000 5000 10250 5000
 $Comp
 L +5V #PWR0173
 U 1 1 582527ED
@@ -678,9 +664,7 @@ F 3 "~" H 9950 3200 60  0000 C CNN
 $EndComp
 Connection ~ 10000 3650
 Wire Wire Line
-	7800 700  9750 700 
-Wire Wire Line
-	9750 700  10400 700 
+	7800 700  10400 700 
 Wire Wire Line
 	7800 700  7800 1100
 Wire Wire Line
@@ -734,9 +718,7 @@ Wire Wire Line
 Wire Wire Line
 	7250 1250 7250 4200
 Wire Wire Line
-	7250 4200 8550 4200
-Wire Wire Line
-	8550 4200 8600 4200
+	7250 4200 8600 4200
 Wire Wire Line
 	10000 5000 10000 4550
 Wire Wire Line
@@ -905,10 +887,6 @@ Connection ~ 9450 3800
 Wire Wire Line
 	9850 1300 9750 1300
 Wire Wire Line
-	9750 1300 9750 3550
-Wire Wire Line
-	9750 3550 8950 3550
-Wire Wire Line
 	10400 700  10400 1850
 Wire Wire Line
 	10400 1850 10000 1850
@@ -917,4 +895,90 @@ Wire Wire Line
 Wire Wire Line
 	9750 1200 9850 1200
 Connection ~ 9750 700 
+$Comp
+L MOSFET_N Q?
+U 1 1 5BFE02AA
+P 9550 2900
+F 0 "Q?" H 9560 3070 60  0000 R CNN
+F 1 "MOSFET_N" H 9560 2750 60  0000 R CNN
+F 2 "~" H 9550 2900 60  0000 C CNN
+F 3 "~" H 9550 2900 60  0000 C CNN
+	1    9550 2900
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8950 3550 9550 3550
+Wire Wire Line
+	9550 3550 9550 3100
+$Comp
+L USGND #PWR?
+U 1 1 5BFE032C
+P 9750 2800
+F 0 "#PWR?" H 9750 2800 30  0001 C CNN
+F 1 "USGND" H 9750 2730 30  0001 C CNN
+F 2 "~" H 9750 2800 60  0000 C CNN
+F 3 "~" H 9750 2800 60  0000 C CNN
+	1    9750 2800
+	0    -1   -1   0   
+$EndComp
+Connection ~ 9750 2800
+$Comp
+L MOSFET_P Q?
+U 1 1 5BFE0334
+P 9550 1850
+F 0 "Q?" H 9550 2040 60  0000 R CNN
+F 1 "MOSFET_P" H 9550 1670 60  0000 R CNN
+F 2 "~" H 9550 1850 60  0000 C CNN
+F 3 "~" H 9550 1850 60  0000 C CNN
+	1    9550 1850
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9350 2800 9350 2700
+Wire Wire Line
+	9350 2700 9550 2700
+Wire Wire Line
+	9550 2700 9550 2050
+$Comp
+L USR R?
+U 1 1 5BFE03C0
+P 9350 2450
+F 0 "R?" V 9430 2450 40  0000 C CNN
+F 1 "100K" V 9250 2450 40  0000 C CNN
+F 2 "~" V 9280 2450 30  0000 C CNN
+F 3 "~" H 9350 2450 30  0000 C CNN
+	1    9350 2450
+	-1   0    0    1   
+$EndComp
+Connection ~ 9350 2700
+$Comp
+L +5V #PWR?
+U 1 1 5BFE03C6
+P 9350 2200
+F 0 "#PWR?" H 9350 2290 20  0001 C CNN
+F 1 "+5V" H 9350 2290 30  0000 C CNN
+F 2 "" H 9350 2200 60  0000 C CNN
+F 3 "" H 9350 2200 60  0000 C CNN
+	1    9350 2200
+	1    0    0    -1  
+$EndComp
+Connection ~ 9350 2200
+Wire Wire Line
+	9350 1750 9350 1550
+Wire Wire Line
+	9350 1550 9750 1550
+Wire Wire Line
+	9750 1550 9750 1300
+$Comp
+L +5V #PWR?
+U 1 1 5BFE044A
+P 9750 1750
+F 0 "#PWR?" H 9750 1840 20  0001 C CNN
+F 1 "+5V" H 9750 1840 30  0000 C CNN
+F 2 "" H 9750 1750 60  0000 C CNN
+F 3 "" H 9750 1750 60  0000 C CNN
+	1    9750 1750
+	0    1    1    0   
+$EndComp
+Connection ~ 9750 1750
 $EndSCHEMATC
