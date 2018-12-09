@@ -5,6 +5,7 @@
 #define SECRET_WORD	0xCC
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <errno.h>
 #include <fcntl.h> 
 #include <string.h>
@@ -16,7 +17,7 @@ int set_interface_attribs (int fd, int speed, int parity) {
         memset (&tty, 0, sizeof tty);
         if (tcgetattr (fd, &tty) != 0)
         {
-                printf("error %d from tcgetattr", errno);
+                fprintf(stderr, "error %d from tcgetattr\n", errno);
                 return -1;
         }
 
@@ -45,7 +46,7 @@ int set_interface_attribs (int fd, int speed, int parity) {
 
         if (tcsetattr (fd, TCSANOW, &tty) != 0)
         {
-                printf("error %d from tcsetattr", errno);
+                fprintf(stderr, "error %d from tcsetattr\n", errno);
                 return -1;
         }
         return 0;
@@ -56,7 +57,7 @@ void set_blocking (int fd, int should_block) {
         memset (&tty, 0, sizeof tty);
         if (tcgetattr (fd, &tty) != 0)
         {
-                printf("error %d from tggetattr", errno);
+                fprintf(stderr, "error %d from tggetattr\n", errno);
                 return;
         }
 
@@ -64,33 +65,34 @@ void set_blocking (int fd, int should_block) {
         tty.c_cc[VTIME] = 5;            // 0.5 seconds read timeout
 
         if (tcsetattr (fd, TCSANOW, &tty) != 0)
-                printf("error %d setting term attributes", errno);
+                fprintf(stderr, "error %d setting term attributes\n", errno);
 }
 
-int main() {
-//	printf("running\n");
+int main(int argc, char *argv[]) {
 	
-	char *portname = "/dev/ttyS1";
-	
-//	printf("opening port\n");
-	
-	int fd = open (portname, O_WRONLY | O_NOCTTY | O_SYNC);
-//	printf("port open\n");
-	if (fd < 0)
-	{
-		printf("error %d opening %s: %s", errno, portname, strerror (errno));
+	if(argc != 6) {
+		fprintf(stderr, "Usage: %s A|P ten-hours hours ten-minutes minutes\n", argv[0]);
 		return -1;
 	}
-//	printf("set attribs");
+
+	char *portname = "/dev/ttyS1";
+	
+	int fd = open (portname, O_WRONLY | O_NOCTTY | O_SYNC);
+	if (fd < 0)
+	{
+		fprintf(stderr, "error %d opening %s: %s\n", errno, portname, strerror (errno));
+		return -1;
+	}
 	set_interface_attribs (fd, B9600, 0);  // set speed to 115,200 bps, 8n1 (no parity)
-//	printf("set blocking");
 	set_blocking (fd, 0);                // set no blocking
 
-	int mins = 2;
-	int tenmins = 3;
-	int hours = 4;
-	int tenhours = 1;
-	int am = 1;
+	// decode arguments
+
+	int mins = atoi(argv[5]);
+	int tenmins = atoi(argv[4]);
+	int hours = atoi(argv[3]);
+	int tenhours = !atoi(argv[2]);
+	int am = (strncmp(argv[1], "A", 1)) == 0;
 
 	int firstbyte = 0;
 	int secondbyte = (mins << 4) | tenmins;
@@ -106,14 +108,13 @@ int main() {
 	else {
 		firstbyte |= 0x04;
 	}
-	printf("%x %x %x\n", firstbyte, secondbyte, SECRET_WORD);
 
 	char buffer[3];
-	buffer[0] = 0x01;//SECRET_WORD;
-	buffer[1] = 0x02;//secondbyte;
+	buffer[0] = (secondbyte * 0x0202020202ULL & 0x010884422010ULL) % 1023;	// insane hack to reverse bytes
+	buffer[1] = (firstbyte * 0x0202020202ULL & 0x010884422010ULL) % 1023;
 	buffer[2] = SECRET_WORD;
-//	printf("write buffer");
-	write(fd, buffer, 3);
+	write(fd, buffer, 3);	// write to serial port
+	write(1, buffer, 3);	// write to stdout
 	
 	close(fd);
 	return 0;
