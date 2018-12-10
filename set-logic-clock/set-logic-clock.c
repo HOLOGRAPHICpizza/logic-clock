@@ -92,7 +92,7 @@ int main(int argc, char *argv[]) {
 	int tenmins = atoi(argv[4]);
 	int hours = atoi(argv[3]);
 	int tenhours = !atoi(argv[2]);
-	int am = (strncmp(argv[1], "A", 1)) == 0;
+	int am = (strncmp(argv[1], "AM", 1)) == 0;
 
 	int firstbyte = 0;
 	int secondbyte = (mins << 4) | tenmins;
