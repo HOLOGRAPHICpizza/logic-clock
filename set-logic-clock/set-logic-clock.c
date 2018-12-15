@@ -71,7 +71,7 @@ void set_blocking (int fd, int should_block) {
 int main(int argc, char *argv[]) {
 	
 	if(argc != 6) {
-		fprintf(stderr, "Usage: %s A|P ten-hours hours ten-minutes minutes\n", argv[0]);
+		fprintf(stderr, "Usage: %s AM|PM ten-hours hours ten-minutes minutes\n", argv[0]);
 		return -1;
 	}
 

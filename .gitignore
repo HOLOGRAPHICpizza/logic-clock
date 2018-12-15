@@ -4,4 +4,5 @@ schematic/*-bak
 a.out
 logic-clock.X/dist
 logic-clock.X/build
+set-logic-clock/set-logic-clock
 
