@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 8 8
 Title "LOGIC CLOCK RS232 RECEIVER BOARD"
-Date "12 jan 2019"
+Date "13 jan 2019"
 Rev "3"
 Comp "Michael Craft"
 Comment1 ""

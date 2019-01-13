@@ -37,7 +37,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 4 8
 Title "LOGIC CLOCK DISPLAY PWM SIGNAL GENERATOR"
-Date "12 jan 2019"
+Date "13 jan 2019"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
