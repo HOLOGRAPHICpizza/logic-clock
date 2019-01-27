@@ -37,7 +37,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 5 8
 Title "LOGIC CLOCK LOGIC BOARD"
-Date "13 jan 2019"
+Date "27 jan 2019"
 Rev "1"
 Comp "Michael Craft"
 Comment1 ""
