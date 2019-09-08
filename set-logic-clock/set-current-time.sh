@@ -1,9 +1,9 @@
 #! /bin/bash
 
-#TODO: Change this to + 2 minutes
-RUNAT="now + 1 minutes"
+# 1 min for testing, 2 mins for production
+RUNAT="now + 2 minutes"
 
-DATE="`date -d $RUNAT +'%p %I %M'`"
+DATE="$(date -d "$RUNAT" +'%p %I %M')"
 
 AM="`echo $DATE | awk '{print $1}'`"
 
@@ -22,7 +22,8 @@ TENMINS="`echo $FULLMINS | grep -o '^.'`"
 MINS="`echo $FULLMINS | grep -o '.$'`"
 
 TIMESTRING="$AM $TENHOURS $HOURS $TENMINS $MINS"
+#echo "$TIMESTRING"
 
 #TODO: make this portable
-echo "/home/michael/documents/projects/logic-clock/set-logic-clock/set-logic-clock $TIMESTRING" | at "$RUNAT"
+echo "/home/michael/documents/projects/logic-clock/set-logic-clock/set-logic-clock $TIMESTRING > /dev/null" | at "$RUNAT"
 
